@@ -1,11 +1,14 @@
 :root {
-  --color-primary: #b91c1c;
-  --color-primary-dark: #991b1b;
-  --color-background: #fafaf9;
-  --color-surface: #ffffff;
-  --color-text: #1c1917;
-  --color-text-muted: #57534e;
-  --color-border: #e7e5e4;
+  /* Colors from Engine 43 firehouse illustration */
+  --color-primary: #3b130f;         /* Burgundy/maroon - door & trim */
+  --color-primary-dark: #471914;    /* Darker burgundy */
+  --color-secondary: #5C4A3D;       /* Warm brown - fence & stairs */
+  --color-accent: #3D4654;          /* Dark slate - windows */
+  --color-background: #F5F0E6;      /* Cream - building walls */
+  --color-surface: #FEFDFB;         /* Lighter cream */
+  --color-text: #2D3339;            /* Dark slate for text */
+  --color-text-muted: #6B7280;      /* Muted gray */
+  --color-border: #E5DFD3;          /* Warm border */
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-serif: Georgia, 'Times New Roman', serif;
   --max-width: 1200px;

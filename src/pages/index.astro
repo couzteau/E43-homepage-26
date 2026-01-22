@@ -35,12 +35,17 @@ const businesses = [
 
 <BaseLayout title="Home">
   <section class="hero">
-    <div class="container">
-      <h1>Welcome to Engine 43</h1>
-      <p class="hero-subtitle">A historic firehouse transformed into a vibrant community venue</p>
-      <div class="hero-actions">
-        <a href="/events" class="btn">View Events</a>
-        <a href="/history" class="btn btn-outline">Our History</a>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Welcome to Engine 43</h1>
+        <p class="hero-subtitle">A historic firehouse transformed into a vibrant community venue</p>
+        <div class="hero-actions">
+          <a href="/events" class="btn">View Events</a>
+          <a href="/history" class="btn btn-outline">Our History</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="/images/engine_no.43.png" alt="Engine 43 Firehouse illustration" />
       </div>
     </div>
   </section>
@@ -98,10 +103,21 @@ const businesses = [
 
 <style>
   .hero {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    background: linear-gradient(135deg, var(--color-accent) 0%, #2D3339 100%);
     color: white;
     padding: var(--spacing-2xl) 0;
-    text-align: center;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+  }
+
+  .hero-text {
+    text-align: left;
   }
 
   .hero h1 {
@@ -118,8 +134,19 @@ const businesses = [
   .hero-actions {
     display: flex;
     gap: var(--spacing-md);
-    justify-content: center;
     flex-wrap: wrap;
+  }
+
+  .hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-image img {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
   }
 
   .btn-outline {
@@ -137,12 +164,30 @@ const businesses = [
   }
 
   @media (max-width: 768px) {
+    .hero-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .hero-text {
+      text-align: center;
+      order: 2;
+    }
+
+    .hero-image {
+      order: 1;
+    }
+
     .hero h1 {
       font-size: 2rem;
     }
 
     .hero-subtitle {
       font-size: 1rem;
+    }
+
+    .hero-actions {
+      justify-content: center;
     }
   }
 </style>
