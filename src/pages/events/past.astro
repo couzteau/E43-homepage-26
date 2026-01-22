@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import EventCard from '../../components/EventCard.astro';
+import { getCollection } from 'astro:content';
+
+const allEvents = await getCollection('events');
+const now = new Date();
+now.setHours(0, 0, 0, 0);
+
+const pastEvents = allEvents
+  .filter(event => event.data.date < now)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<BaseLayout title="Past Events" description="Browse past events at Engine 43">
+  <section class="section">
+    <div class="container">
+      <div class="page-header">
+        <h1>Past Events</h1>
+        <p class="text-muted">A look back at what we've hosted at Engine 43</p>
+      </div>
+
+      <div class="events-nav">
+        <a href="/events" class="events-tab">Upcoming</a>
+        <a href="/events/past" class="events-tab active">Past Events</a>
+      </div>
+
+      {pastEvents.length > 0 ? (
+        <div class="events-list">
+          {pastEvents.map(event => (
+            <EventCard
+              title={event.data.title}
+              date={event.data.date}
+              time={event.data.time}
+              description={event.data.description}
+              image={event.data.image}
+              location={event.data.location}
+              slug={event.slug}
+            />
+          ))}
+        </div>
+      ) : (
+        <div class="empty-state card">
+          <h3>No Past Events Yet</h3>
+          <p class="text-muted">Check out our upcoming events to see what's happening soon!</p>
+          <a href="/events" class="btn">View Upcoming Events</a>
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .events-nav {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin-bottom: var(--spacing-xl);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--spacing-md);
+  }
+
+  .events-tab {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    color: var(--color-text-muted);
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+
+  .events-tab:hover {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  .events-tab.active {
+    color: var(--color-primary);
+    font-weight: 500;
+    border-bottom: 2px solid var(--color-primary);
+    margin-bottom: -1px;
+  }
+
+  .events-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: var(--spacing-2xl);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .empty-state h3 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .empty-state p {
+    margin-bottom: var(--spacing-lg);
+  }
+</style>

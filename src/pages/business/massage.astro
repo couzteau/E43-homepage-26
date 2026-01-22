@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Massage Therapy" description="Professional therapeutic massage services at Engine 43">
+  <section class="hero-small">
+    <div class="container">
+      <h1>Massage Therapy</h1>
+      <p>Relaxation and healing in a historic setting</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content-container">
+      <article class="business-content">
+        <h2>Professional Therapeutic Massage</h2>
+        <p>
+          Located in the heart of Engine 43, our massage therapy practice offers a peaceful
+          retreat from the hustle and bustle of daily life. With skilled practitioners and
+          a variety of massage modalities, we're here to help you feel your best.
+        </p>
+
+        <h3>Services Offered</h3>
+        <ul class="services-list">
+          <li>
+            <strong>Swedish Massage</strong>
+            <span>Gentle, relaxing strokes to promote overall wellness</span>
+          </li>
+          <li>
+            <strong>Deep Tissue Massage</strong>
+            <span>Focused pressure to release chronic muscle tension</span>
+          </li>
+          <li>
+            <strong>Sports Massage</strong>
+            <span>Targeted treatment for athletes and active individuals</span>
+          </li>
+          <li>
+            <strong>Prenatal Massage</strong>
+            <span>Safe, nurturing massage for expectant mothers</span>
+          </li>
+        </ul>
+
+        <h3>Book an Appointment</h3>
+        <p>
+          Ready to schedule your session? Contact us to find a time that works for you.
+          We welcome both new and returning clients.
+        </p>
+
+        <div class="contact-card card">
+          <h4>Contact Information</h4>
+          <p><strong>Location:</strong> Engine 43, San Francisco</p>
+          <p><strong>Hours:</strong> By appointment</p>
+          <p class="text-muted">Contact information coming soon</p>
+        </div>
+
+        <p class="back-link">
+          <a href="/business">&larr; Back to all businesses</a>
+        </p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero-small {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: white;
+    padding: var(--spacing-2xl) 0;
+    text-align: center;
+  }
+
+  .hero-small h1 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .hero-small p {
+    opacity: 0.9;
+    font-size: 1.125rem;
+  }
+
+  .content-container {
+    max-width: 800px;
+  }
+
+  .business-content h2 {
+    margin-top: 0;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .business-content h3 {
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .business-content p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.8;
+  }
+
+  .services-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-lg) 0;
+  }
+
+  .services-list li {
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .services-list li:last-child {
+    border-bottom: none;
+  }
+
+  .services-list strong {
+    color: var(--color-primary);
+  }
+
+  .services-list span {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+  }
+
+  .contact-card {
+    margin: var(--spacing-xl) 0;
+  }
+
+  .contact-card h4 {
+    margin-top: 0;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .contact-card p {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .back-link {
+    margin-top: var(--spacing-xl);
+  }
+</style>

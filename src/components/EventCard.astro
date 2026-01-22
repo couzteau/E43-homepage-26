@@ -1,0 +1,120 @@
+---
+interface Props {
+  title: string;
+  date: Date;
+  time?: string;
+  description: string;
+  image?: string;
+  location?: string;
+  slug: string;
+}
+
+const { title, date, time, description, image, location = 'Engine 43', slug } = Astro.props;
+
+const formattedDate = date.toLocaleDateString('en-US', {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<article class="event-card card">
+  {image && (
+    <div class="event-image">
+      <img src={image} alt={title} loading="lazy" />
+    </div>
+  )}
+  <div class="event-content">
+    <div class="event-date">
+      <span class="date-day">{date.getDate()}</span>
+      <span class="date-month">{date.toLocaleDateString('en-US', { month: 'short' })}</span>
+    </div>
+    <div class="event-details">
+      <h3 class="event-title">{title}</h3>
+      <p class="event-meta">
+        <span class="event-datetime">{formattedDate}{time && ` at ${time}`}</span>
+        <span class="event-location">{location}</span>
+      </p>
+      <p class="event-description">{description}</p>
+    </div>
+  </div>
+</article>
+
+<style>
+  .event-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .event-image {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+
+  .event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .event-content {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+  }
+
+  .event-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    padding: var(--spacing-sm);
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .date-day {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  .date-month {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  .event-details {
+    flex: 1;
+  }
+
+  .event-title {
+    margin: 0 0 var(--spacing-xs);
+    font-size: 1.25rem;
+  }
+
+  .event-meta {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    margin: 0 0 var(--spacing-sm);
+  }
+
+  .event-datetime {
+    display: block;
+  }
+
+  .event-location {
+    display: block;
+  }
+
+  .event-description {
+    margin: 0;
+    color: var(--color-text-muted);
+  }
+</style>

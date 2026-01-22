@@ -1,0 +1,156 @@
+---
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/events', label: 'Events' },
+  { href: '/history', label: 'History' },
+  { href: '/business', label: 'Businesses' },
+];
+---
+
+<header class="site-header">
+  <div class="container header-content">
+    <a href="/" class="logo">Engine 43</a>
+    <nav class="nav">
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-list">
+        {navLinks.map(link => (
+          <li>
+            <a
+              href={link.href}
+              class:list={['nav-link', { active: currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href)) }]}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    background-color: var(--color-primary);
+    color: white;
+    padding: var(--spacing-md) 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    color: white;
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-weight: bold;
+  }
+
+  .logo:hover {
+    text-decoration: none;
+  }
+
+  .nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--spacing-lg);
+  }
+
+  .nav-link {
+    color: white;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    opacity: 1;
+    text-decoration: none;
+  }
+
+  .nav-link.active {
+    border-bottom: 2px solid white;
+    padding-bottom: 2px;
+  }
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-sm);
+  }
+
+  .hamburger {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: white;
+    position: relative;
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: white;
+    left: 0;
+  }
+
+  .hamburger::before {
+    top: -8px;
+  }
+
+  .hamburger::after {
+    top: 8px;
+  }
+
+  @media (max-width: 768px) {
+    .nav-toggle {
+      display: block;
+    }
+
+    .nav-list {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: var(--color-primary);
+      flex-direction: column;
+      padding: var(--spacing-md);
+      gap: var(--spacing-md);
+    }
+
+    .nav-list.open {
+      display: flex;
+    }
+
+    .nav {
+      position: static;
+    }
+  }
+</style>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const navList = document.querySelector('.nav-list');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = navList?.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+</script>

@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Our History" description="Learn about the rich history of Engine 43, a historic San Francisco firehouse">
+  <section class="hero-small">
+    <div class="container">
+      <h1>Our History</h1>
+      <p>From fighting fires to building community</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content-container">
+      <article class="history-content">
+        <h2>A Historic San Francisco Firehouse</h2>
+        <p>
+          Engine 43 has stood as a landmark in our neighborhood for over a century.
+          Originally built to house the brave firefighters who protected our community,
+          this historic firehouse has been transformed into a vibrant venue that continues
+          to serve the people who live and work here.
+        </p>
+
+        <h3>The Firehouse Era</h3>
+        <p>
+          The building served as an active fire station for decades, housing crews and
+          equipment that responded to emergencies throughout the area. The architecture
+          reflects the classic firehouse design of its era, with high ceilings, large doors,
+          and the sturdy construction needed to support heavy fire apparatus.
+        </p>
+
+        <div class="highlight-box">
+          <h3>Did You Know?</h3>
+          <p>
+            Engine 43 gained Hollywood fame when it was featured in "The Princess Diaries"
+            (2001), starring Anne Hathaway and Julie Andrews. The iconic firehouse scenes
+            were filmed right here, making our building part of movie history!
+          </p>
+        </div>
+
+        <h3>A New Chapter</h3>
+        <p>
+          Today, Engine 43 has been lovingly restored and repurposed as a community venue
+          and home to several local businesses. While the fire trucks have moved on, the
+          spirit of service to our community remains strong. We host events, markets, and
+          gatherings that bring people together in this historic space.
+        </p>
+
+        <h3>Preserving Our Heritage</h3>
+        <p>
+          We're committed to honoring the building's history while creating new memories.
+          Many original architectural features have been preserved, including the high ceilings,
+          exposed brick, and the distinctive firehouse doors that once opened to let engines
+          race to emergencies.
+        </p>
+
+        <p>
+          Whether you're visiting for an event, stopping by one of our resident businesses,
+          or just curious about this neighborhood landmark, we invite you to explore
+          Engine 43 and discover the history within its walls.
+        </p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero-small {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: white;
+    padding: var(--spacing-2xl) 0;
+    text-align: center;
+  }
+
+  .hero-small h1 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .hero-small p {
+    opacity: 0.9;
+    font-size: 1.125rem;
+  }
+
+  .content-container {
+    max-width: 800px;
+  }
+
+  .history-content h2 {
+    margin-top: 0;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .history-content h3 {
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .history-content p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.8;
+  }
+
+  .highlight-box {
+    background-color: var(--color-surface);
+    border-left: 4px solid var(--color-primary);
+    padding: var(--spacing-lg);
+    margin: var(--spacing-xl) 0;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .highlight-box h3 {
+    margin-top: 0;
+    color: var(--color-primary);
+  }
+
+  .highlight-box p {
+    margin-bottom: 0;
+  }
+</style>

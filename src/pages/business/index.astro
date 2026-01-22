@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BusinessCard from '../../components/BusinessCard.astro';
+
+const businesses = [
+  {
+    name: 'Massage Therapy',
+    description: 'Professional therapeutic massage services in a relaxing environment. From Swedish to deep tissue, find the treatment that works for you.',
+    href: '/business/massage',
+  },
+  {
+    name: 'Jewelry Studio',
+    description: 'Handcrafted jewelry and custom designs by local artisans. Unique pieces created with care and attention to detail.',
+    href: '/business/jewelry',
+  },
+  {
+    name: 'Art Studio',
+    description: 'Painting, screenprinting, and creative workshops. Explore your artistic side with our resident artists.',
+    href: '/business/art',
+  },
+];
+---
+
+<BaseLayout title="Businesses" description="Discover the businesses and artisans at Engine 43">
+  <section class="hero-small">
+    <div class="container">
+      <h1>Our Businesses</h1>
+      <p>Meet the talented people who make Engine 43 their home</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="intro text-center">
+        Engine 43 is home to a diverse group of artisans, therapists, and creative professionals.
+        Each brings their unique talents to our historic space, creating a vibrant community
+        under one roof.
+      </p>
+
+      <div class="grid grid-3">
+        {businesses.map(business => (
+          <BusinessCard
+            name={business.name}
+            description={business.description}
+            href={business.href}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero-small {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: white;
+    padding: var(--spacing-2xl) 0;
+    text-align: center;
+  }
+
+  .hero-small h1 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .hero-small p {
+    opacity: 0.9;
+    font-size: 1.125rem;
+  }
+
+  .intro {
+    max-width: 700px;
+    margin: 0 auto var(--spacing-2xl);
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+  }
+</style>

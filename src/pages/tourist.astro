@@ -1,0 +1,247 @@
+---
+import TouristLayout from '../layouts/TouristLayout.astro';
+import ButtondownSignup from '../components/ButtondownSignup.astro';
+import { getCollection } from 'astro:content';
+
+const allEvents = await getCollection('events');
+const now = new Date();
+now.setHours(0, 0, 0, 0);
+
+const upcomingEvents = allEvents
+  .filter(event => event.data.date >= now)
+  .sort((a, b) => a.data.date.getTime() - b.data.date.getTime())
+  .slice(0, 2);
+---
+
+<TouristLayout title="Welcome" description="Welcome to Engine 43 - A historic San Francisco firehouse">
+  <section class="welcome-section">
+    <div class="container">
+      <h1>Welcome to Engine 43!</h1>
+      <p class="welcome-text">
+        You're standing in a piece of San Francisco history. This former firehouse
+        has been transformed into a vibrant community space.
+      </p>
+    </div>
+  </section>
+
+  <section class="quick-links section">
+    <div class="container">
+      <div class="links-grid">
+        <a href="/events" class="quick-link-card">
+          <span class="quick-link-icon">📅</span>
+          <h3>Events</h3>
+          <p>See what's happening</p>
+        </a>
+        <a href="/business" class="quick-link-card">
+          <span class="quick-link-icon">🏪</span>
+          <h3>Businesses</h3>
+          <p>Meet our artisans</p>
+        </a>
+        <a href="/history" class="quick-link-card">
+          <span class="quick-link-icon">🏛️</span>
+          <h3>History</h3>
+          <p>Our firehouse story</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {upcomingEvents.length > 0 && (
+    <section class="upcoming section">
+      <div class="container">
+        <h2>Coming Up</h2>
+        <div class="upcoming-list">
+          {upcomingEvents.map(event => (
+            <div class="upcoming-item">
+              <div class="upcoming-date">
+                <span class="day">{event.data.date.getDate()}</span>
+                <span class="month">{event.data.date.toLocaleDateString('en-US', { month: 'short' })}</span>
+              </div>
+              <div class="upcoming-info">
+                <h4>{event.data.title}</h4>
+                <p>{event.data.time && `${event.data.time} · `}{event.data.location}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <a href="/events" class="btn" style="margin-top: var(--spacing-lg);">View All Events</a>
+      </div>
+    </section>
+  )}
+
+  <section class="section">
+    <div class="container">
+      <ButtondownSignup
+        heading="Stay Connected"
+        description="Get updates on events and happenings at Engine 43"
+      />
+    </div>
+  </section>
+
+  <section class="trivia section">
+    <div class="container">
+      <div class="trivia-card card">
+        <h3>Fun Fact</h3>
+        <p>
+          Engine 43 was featured in "The Princess Diaries" (2001)!
+          Look around - you might recognize this space from the movie.
+        </p>
+        <a href="/history">Learn more about our history &rarr;</a>
+      </div>
+    </div>
+  </section>
+</TouristLayout>
+
+<style>
+  .welcome-section {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: white;
+    padding: var(--spacing-2xl) 0;
+    text-align: center;
+  }
+
+  .welcome-section h1 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .welcome-text {
+    font-size: 1.125rem;
+    opacity: 0.9;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .quick-links {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .links-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+  }
+
+  .quick-link-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: var(--spacing-lg) var(--spacing-md);
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .quick-link-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+  }
+
+  .quick-link-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .quick-link-card h3 {
+    margin: 0 0 var(--spacing-xs);
+    font-size: 1rem;
+  }
+
+  .quick-link-card p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+  }
+
+  .upcoming {
+    background-color: var(--color-border);
+    text-align: center;
+  }
+
+  .upcoming h2 {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .upcoming-list {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .upcoming-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    background-color: var(--color-surface);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    margin-bottom: var(--spacing-sm);
+    text-align: left;
+  }
+
+  .upcoming-date {
+    background-color: var(--color-primary);
+    color: white;
+    padding: var(--spacing-sm);
+    border-radius: 4px;
+    text-align: center;
+    min-width: 50px;
+  }
+
+  .upcoming-date .day {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  .upcoming-date .month {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  .upcoming-info h4 {
+    margin: 0 0 var(--spacing-xs);
+    font-size: 1rem;
+    font-family: var(--font-sans);
+  }
+
+  .upcoming-info p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+  }
+
+  .trivia-card {
+    text-align: center;
+  }
+
+  .trivia-card h3 {
+    margin-top: 0;
+    color: var(--color-primary);
+  }
+
+  .trivia-card p {
+    margin-bottom: var(--spacing-md);
+  }
+
+  @media (max-width: 480px) {
+    .links-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .quick-link-card {
+      display: flex;
+      align-items: center;
+      text-align: left;
+      gap: var(--spacing-md);
+    }
+
+    .quick-link-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0;
+    }
+  }
+</style>

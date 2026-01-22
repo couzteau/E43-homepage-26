@@ -1,0 +1,72 @@
+---
+interface Props {
+  name: string;
+  description: string;
+  image?: string;
+  href: string;
+}
+
+const { name, description, image, href } = Astro.props;
+---
+
+<a href={href} class="business-card card">
+  {image && (
+    <div class="business-image">
+      <img src={image} alt={name} loading="lazy" />
+    </div>
+  )}
+  <div class="business-content">
+    <h3 class="business-name">{name}</h3>
+    <p class="business-description">{description}</p>
+    <span class="business-link">Learn more &rarr;</span>
+  </div>
+</a>
+
+<style>
+  .business-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 0;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .business-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+  }
+
+  .business-image {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background-color: var(--color-border);
+  }
+
+  .business-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .business-content {
+    padding: var(--spacing-lg);
+  }
+
+  .business-name {
+    margin: 0 0 var(--spacing-sm);
+    font-size: 1.25rem;
+  }
+
+  .business-description {
+    color: var(--color-text-muted);
+    margin: 0 0 var(--spacing-md);
+  }
+
+  .business-link {
+    color: var(--color-primary);
+    font-weight: 500;
+  }
+</style>

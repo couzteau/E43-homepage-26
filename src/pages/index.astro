@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EventCard from '../components/EventCard.astro';
+import BusinessCard from '../components/BusinessCard.astro';
+import ButtondownSignup from '../components/ButtondownSignup.astro';
+import { getCollection } from 'astro:content';
+
+const allEvents = await getCollection('events');
+const now = new Date();
+now.setHours(0, 0, 0, 0);
+
+const upcomingEvents = allEvents
+  .filter(event => event.data.date >= now)
+  .sort((a, b) => a.data.date.getTime() - b.data.date.getTime())
+  .slice(0, 3);
+
+const businesses = [
+  {
+    name: 'Massage Therapy',
+    description: 'Professional therapeutic massage services in a relaxing environment.',
+    href: '/business/massage',
+  },
+  {
+    name: 'Jewelry Studio',
+    description: 'Handcrafted jewelry and custom designs by local artisans.',
+    href: '/business/jewelry',
+  },
+  {
+    name: 'Art Studio',
+    description: 'Painting, screenprinting, and creative workshops.',
+    href: '/business/art',
+  },
+];
+---
+
+<BaseLayout title="Home">
+  <section class="hero">
+    <div class="container">
+      <h1>Welcome to Engine 43</h1>
+      <p class="hero-subtitle">A historic firehouse transformed into a vibrant community venue</p>
+      <div class="hero-actions">
+        <a href="/events" class="btn">View Events</a>
+        <a href="/history" class="btn btn-outline">Our History</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Upcoming Events</h2>
+      {upcomingEvents.length > 0 ? (
+        <div class="grid grid-2">
+          {upcomingEvents.map(event => (
+            <EventCard
+              title={event.data.title}
+              date={event.data.date}
+              time={event.data.time}
+              description={event.data.description}
+              image={event.data.image}
+              location={event.data.location}
+              slug={event.slug}
+            />
+          ))}
+        </div>
+      ) : (
+        <p class="text-muted text-center">No upcoming events scheduled. Check back soon!</p>
+      )}
+      <div class="text-center" style="margin-top: var(--spacing-xl);">
+        <a href="/events" class="btn">View All Events</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Our Businesses</h2>
+      <p class="text-center text-muted" style="margin-bottom: var(--spacing-xl);">
+        Discover the talented artisans and professionals who call Engine 43 home.
+      </p>
+      <div class="grid grid-3">
+        {businesses.map(business => (
+          <BusinessCard
+            name={business.name}
+            description={business.description}
+            href={business.href}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <ButtondownSignup />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: white;
+    padding: var(--spacing-2xl) 0;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-outline {
+    background-color: transparent;
+    border: 2px solid white;
+  }
+
+  .btn-outline:hover {
+    background-color: white;
+    color: var(--color-primary);
+  }
+
+  .section-alt {
+    background-color: var(--color-border);
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+  }
+</style>

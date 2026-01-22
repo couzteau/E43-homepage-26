@@ -1,0 +1,151 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Art Studio" description="Painting, screenprinting, and creative workshops at Engine 43">
+  <section class="hero-small">
+    <div class="container">
+      <h1>Art Studio</h1>
+      <p>Where creativity comes to life</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content-container">
+      <article class="business-content">
+        <h2>Painting & Screenprinting Studio</h2>
+        <p>
+          Our art studio at Engine 43 is a creative haven for artists and art enthusiasts alike.
+          From fine art painting to custom screenprinting, we offer a space where creativity
+          flourishes and artistic skills are developed.
+        </p>
+
+        <h3>What We Offer</h3>
+        <ul class="services-list">
+          <li>
+            <strong>Fine Art Painting</strong>
+            <span>Original works by our resident artists, available for purchase</span>
+          </li>
+          <li>
+            <strong>Custom Screenprinting</strong>
+            <span>T-shirts, posters, and prints for individuals and businesses</span>
+          </li>
+          <li>
+            <strong>Art Workshops</strong>
+            <span>Learn painting techniques, screenprinting basics, and more</span>
+          </li>
+          <li>
+            <strong>Private Events</strong>
+            <span>Host a paint night or creative gathering at the studio</span>
+          </li>
+        </ul>
+
+        <h3>Workshops & Classes</h3>
+        <p>
+          We regularly host workshops for all skill levels. Whether you're picking up a brush
+          for the first time or looking to refine your technique, there's something for everyone.
+          Check our events page for upcoming class dates.
+        </p>
+
+        <h3>Custom Orders</h3>
+        <p>
+          Need custom screenprinted merchandise for your band, business, or event? We love
+          collaborating on custom projects. Reach out to discuss your vision and we'll help
+          bring it to life.
+        </p>
+
+        <div class="contact-card card">
+          <h4>Studio Information</h4>
+          <p><strong>Location:</strong> Engine 43, San Francisco</p>
+          <p><strong>Hours:</strong> Open studio and by appointment</p>
+          <p class="text-muted">Contact information coming soon</p>
+        </div>
+
+        <p class="back-link">
+          <a href="/business">&larr; Back to all businesses</a>
+        </p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero-small {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: white;
+    padding: var(--spacing-2xl) 0;
+    text-align: center;
+  }
+
+  .hero-small h1 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .hero-small p {
+    opacity: 0.9;
+    font-size: 1.125rem;
+  }
+
+  .content-container {
+    max-width: 800px;
+  }
+
+  .business-content h2 {
+    margin-top: 0;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .business-content h3 {
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .business-content p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.8;
+  }
+
+  .services-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-lg) 0;
+  }
+
+  .services-list li {
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .services-list li:last-child {
+    border-bottom: none;
+  }
+
+  .services-list strong {
+    color: var(--color-primary);
+  }
+
+  .services-list span {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+  }
+
+  .contact-card {
+    margin: var(--spacing-xl) 0;
+  }
+
+  .contact-card h4 {
+    margin-top: 0;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .contact-card p {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .back-link {
+    margin-top: var(--spacing-xl);
+  }
+</style>

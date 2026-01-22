@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Jewelry Studio" description="Handcrafted jewelry and custom designs at Engine 43">
+  <section class="hero-small">
+    <div class="container">
+      <h1>Jewelry Studio</h1>
+      <p>Handcrafted pieces with heart and soul</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content-container">
+      <article class="business-content">
+        <h2>Handcrafted Jewelry</h2>
+        <p>
+          Our jewelry studio at Engine 43 is where creativity meets craftsmanship. Each piece
+          is thoughtfully designed and handcrafted with attention to detail, resulting in
+          unique jewelry that tells a story.
+        </p>
+
+        <h3>What We Create</h3>
+        <ul class="services-list">
+          <li>
+            <strong>Custom Designs</strong>
+            <span>Work with our artisans to create a piece uniquely yours</span>
+          </li>
+          <li>
+            <strong>One-of-a-Kind Pieces</strong>
+            <span>Browse our collection of handmade jewelry</span>
+          </li>
+          <li>
+            <strong>Jewelry Repair</strong>
+            <span>Give new life to your treasured pieces</span>
+          </li>
+          <li>
+            <strong>Workshops</strong>
+            <span>Learn basic jewelry-making techniques</span>
+          </li>
+        </ul>
+
+        <h3>Materials & Techniques</h3>
+        <p>
+          We work with a variety of materials including sterling silver, gold-fill, brass,
+          and carefully sourced gemstones. Our techniques range from traditional metalsmithing
+          to modern approaches, always with an emphasis on quality and sustainability.
+        </p>
+
+        <h3>Visit the Studio</h3>
+        <p>
+          Stop by during open studio hours or schedule an appointment to discuss a custom piece.
+          We love meeting fellow jewelry enthusiasts and sharing our craft.
+        </p>
+
+        <div class="contact-card card">
+          <h4>Studio Information</h4>
+          <p><strong>Location:</strong> Engine 43, San Francisco</p>
+          <p><strong>Hours:</strong> Open studio hours vary - check our events calendar</p>
+          <p class="text-muted">Contact information coming soon</p>
+        </div>
+
+        <p class="back-link">
+          <a href="/business">&larr; Back to all businesses</a>
+        </p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero-small {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: white;
+    padding: var(--spacing-2xl) 0;
+    text-align: center;
+  }
+
+  .hero-small h1 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .hero-small p {
+    opacity: 0.9;
+    font-size: 1.125rem;
+  }
+
+  .content-container {
+    max-width: 800px;
+  }
+
+  .business-content h2 {
+    margin-top: 0;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .business-content h3 {
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .business-content p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.8;
+  }
+
+  .services-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-lg) 0;
+  }
+
+  .services-list li {
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .services-list li:last-child {
+    border-bottom: none;
+  }
+
+  .services-list strong {
+    color: var(--color-primary);
+  }
+
+  .services-list span {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+  }
+
+  .contact-card {
+    margin: var(--spacing-xl) 0;
+  }
+
+  .contact-card h4 {
+    margin-top: 0;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .contact-card p {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .back-link {
+    margin-top: var(--spacing-xl);
+  }
+</style>
