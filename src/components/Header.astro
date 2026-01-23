@@ -11,9 +11,7 @@ const navLinks = [
 
 <header class="site-header">
   <div class="container header-content">
-    <a href="/" class="logo">
-      <img src="/images/engine_no.43.png" alt="Engine 43" class="logo-img" />
-    </a>
+    <a href="/" class="logo">Engine 43</a>
     <nav class="nav">
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span class="hamburger"></span>
@@ -38,6 +36,7 @@ const navLinks = [
   .site-header {
     background-color: var(--color-primary);
     color: white;
+    padding: var(--spacing-md) 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -50,19 +49,14 @@ const navLinks = [
   }
 
   .logo {
-    display: flex;
-    align-items: center;
-    margin-left: calc(-1 * var(--spacing-md));
+    color: white;
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-weight: bold;
   }
 
   .logo:hover {
     text-decoration: none;
-  }
-
-  .logo-img {
-    height: 68px;
-    width: auto;
-    display: block;
   }
 
   .nav-list {
