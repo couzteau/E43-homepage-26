@@ -1,16 +1,22 @@
 :root {
-  /* Colors from Engine 43 firehouse illustration */
+  /* Colors - earthy bohemian palette */
   --color-primary: #3b130f;         /* Burgundy/maroon - door & trim */
   --color-primary-dark: #471914;    /* Darker burgundy */
   --color-secondary: #5C4A3D;       /* Warm brown - fence & stairs */
-  --color-accent: #3D4654;          /* Dark slate - windows */
+  --color-accent: #3D4654;          /* Dark slate */
   --color-background: #F5F0E6;      /* Cream - building walls */
   --color-surface: #FEFDFB;         /* Lighter cream */
   --color-text: #2D3339;            /* Dark slate for text */
   --color-text-muted: #6B7280;      /* Muted gray */
   --color-border: #E5DFD3;          /* Warm border */
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Typography */
+  --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-serif: Georgia, 'Times New Roman', serif;
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-ui: 'Courier New', Courier, monospace;
+
+  /* Spacing */
   --max-width: 1200px;
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
@@ -30,7 +36,7 @@ html {
   font-family: var(--font-sans);
   background-color: var(--color-background);
   color: var(--color-text);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 body {
@@ -39,17 +45,23 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   line-height: 1.2;
   margin-top: 0;
+  font-weight: 400;
 }
 
 h1 {
   font-size: 2.5rem;
+  font-style: italic;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-style: normal;
+  color: var(--color-secondary);
 }
 
 h3 {
@@ -76,46 +88,41 @@ img {
   padding: 0 var(--spacing-md);
 }
 
-/* Spectrum 2 Button Styles */
+/* Bohemian Button Styles */
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-sm);
-  padding: 10px 20px;
+  display: inline-block;
+  padding: 12px 28px;
   background-color: var(--color-primary);
   color: white;
-  border: 2px solid transparent;
-  border-radius: 24px;
-  font-size: 0.9375rem;
-  font-weight: 600;
+  border: 1px solid var(--color-primary);
+  border-radius: 2px;
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   cursor: pointer;
   text-decoration: none;
-  transition: all 0.13s ease-out;
-  min-height: 40px;
+  transition: all 0.2s ease;
 }
 
 .btn:hover {
-  background-color: var(--color-primary-dark);
+  background-color: transparent;
+  color: var(--color-primary);
   text-decoration: none;
-  transform: scale(1.02);
-}
-
-.btn:active {
-  transform: scale(0.98);
 }
 
 .btn:focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--color-secondary);
   outline-offset: 2px;
 }
 
-/* Spectrum 2 Secondary/Outline Button */
+/* Outline Button */
 .btn-secondary,
 .btn-outline {
   background-color: transparent;
   color: var(--color-primary);
-  border: 2px solid var(--color-primary);
+  border: 1px solid var(--color-primary);
 }
 
 .btn-secondary:hover,
@@ -124,21 +131,21 @@ img {
   color: white;
 }
 
-/* Spectrum 2 Form Inputs */
+/* Form Inputs */
 input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="search"],
 textarea,
 select {
-  padding: 10px 14px;
-  border: 2px solid var(--color-border);
-  border-radius: 8px;
+  padding: 12px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
   font-size: 1rem;
+  font-family: var(--font-sans);
   background-color: var(--color-surface);
   color: var(--color-text);
-  transition: border-color 0.13s ease-out, box-shadow 0.13s ease-out;
-  min-height: 40px;
+  transition: border-color 0.2s ease;
 }
 
 input[type="text"]:hover,
@@ -158,25 +165,18 @@ textarea:focus,
 select:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 1px var(--color-primary);
 }
 
-/* Spectrum 2 Card Styles */
+/* Card Styles */
 .card {
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: 12px;
+  border-radius: 4px;
   padding: var(--spacing-lg);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-  transition: box-shadow 0.13s ease-out, transform 0.13s ease-out;
 }
 
 .card:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-}
-
-.card-interactive:hover {
-  transform: translateY(-2px);
+  border-color: var(--color-secondary);
 }
 
 .grid {
@@ -206,6 +206,19 @@ select:focus {
 
 .section-title {
   margin-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+/* Date badge style */
+.date-badge {
+  display: inline-block;
+  background-color: var(--color-secondary);
+  color: white;
+  padding: 4px 12px;
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  letter-spacing: 0.05em;
+  border-radius: 2px;
 }
 
 @media (max-width: 768px) {
@@ -214,7 +227,7 @@ select:focus {
   }
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   .section {

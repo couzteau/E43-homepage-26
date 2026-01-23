@@ -21,18 +21,10 @@ const formattedDate = date.toLocaleDateString('en-US', {
 
 <article class="event-card card">
   <div class="event-content">
-    <div class="event-date">
-      <span class="date-day">{date.getDate()}</span>
-      <span class="date-month">{date.toLocaleDateString('en-US', { month: 'short' })}</span>
-    </div>
-    <div class="event-details">
-      <h3 class="event-title">{title}</h3>
-      <p class="event-meta">
-        <span class="event-datetime">{formattedDate}{time && ` at ${time}`}</span>
-        <span class="event-location">{location}</span>
-      </p>
-      <p class="event-description">{description}</p>
-    </div>
+    <span class="event-date">{formattedDate}{time && `, ${time}`}</span>
+    <h3 class="event-title">{title}</h3>
+    <p class="event-location">{location}</p>
+    <p class="event-description">{description}</p>
   </div>
   {image && (
     <div class="event-image">
@@ -60,10 +52,7 @@ const formattedDate = date.toLocaleDateString('en-US', {
   }
 
   .event-content {
-    display: flex;
-    gap: var(--spacing-md);
     padding: var(--spacing-lg);
-    align-items: flex-start;
   }
 
   @media (max-width: 600px) {
@@ -81,54 +70,36 @@ const formattedDate = date.toLocaleDateString('en-US', {
   }
 
   .event-date {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-width: 60px;
-    padding: var(--spacing-sm);
-    background-color: var(--color-primary);
+    display: inline-block;
+    background-color: var(--color-secondary);
     color: white;
-    border-radius: 4px;
-    text-align: center;
-  }
-
-  .date-day {
-    font-size: 1.5rem;
-    font-weight: bold;
-    line-height: 1;
-  }
-
-  .date-month {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-  }
-
-  .event-details {
-    flex: 1;
+    padding: 4px 12px;
+    font-family: var(--font-ui);
+    font-size: 0.8125rem;
+    letter-spacing: 0.02em;
+    border-radius: 2px;
+    margin-bottom: var(--spacing-sm);
   }
 
   .event-title {
     margin: 0 0 var(--spacing-xs);
     font-size: 1.25rem;
+    font-style: normal;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--color-text);
   }
 
-  .event-meta {
+  .event-location {
     color: var(--color-text-muted);
     font-size: 0.875rem;
     margin: 0 0 var(--spacing-sm);
   }
 
-  .event-datetime {
-    display: block;
-  }
-
-  .event-location {
-    display: block;
-  }
-
   .event-description {
     margin: 0;
     color: var(--color-text-muted);
+    font-family: var(--font-serif);
+    font-style: italic;
   }
 </style>
