@@ -20,11 +20,6 @@ const formattedDate = date.toLocaleDateString('en-US', {
 ---
 
 <article class="event-card card">
-  {image && (
-    <div class="event-image">
-      <img src={image} alt={title} loading="lazy" />
-    </div>
-  )}
   <div class="event-content">
     <div class="event-date">
       <span class="date-day">{date.getDate()}</span>
@@ -39,31 +34,53 @@ const formattedDate = date.toLocaleDateString('en-US', {
       <p class="event-description">{description}</p>
     </div>
   </div>
+  {image && (
+    <div class="event-image">
+      <img src={image} alt={title} loading="lazy" />
+    </div>
+  )}
 </article>
 
 <style>
   .event-card {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     overflow: hidden;
     padding: 0;
   }
 
   .event-image {
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-background);
   }
 
   .event-image img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
   }
 
   .event-content {
     display: flex;
     gap: var(--spacing-md);
     padding: var(--spacing-lg);
+    align-items: flex-start;
+  }
+
+  @media (max-width: 600px) {
+    .event-card {
+      grid-template-columns: 1fr;
+    }
+
+    .event-content {
+      order: 1;
+    }
+
+    .event-image {
+      order: 2;
+    }
   }
 
   .event-date {
