@@ -11,7 +11,12 @@ const navLinks = [
 
 <header class="site-header">
   <div class="container header-content">
-    <a href="/" class="logo">Engine 43</a>
+    <div class="header-brand">
+      <a href="/" class="header-logo">
+        <img src="/images/E43-Mia-Logo-final.png" alt="Engine 43" class="header-logo-img" />
+      </a>
+      <a href="/" class="logo">Engine 43</a>
+    </div>
     <nav class="nav">
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span class="hamburger"></span>
@@ -36,7 +41,6 @@ const navLinks = [
   .site-header {
     background-color: var(--color-primary);
     color: white;
-    padding: var(--spacing-md) 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -46,6 +50,23 @@ const navLinks = [
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .header-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .header-logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-logo-img {
+    height: 96px;
+    width: auto;
+    display: block;
   }
 
   .logo {
