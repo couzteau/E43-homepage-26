@@ -37,7 +37,7 @@ const businesses = [
   <section class="hero">
     <div class="container hero-content">
       <div class="hero-text">
-        <h1>Welcome to Engine 43</h1>
+        <h1>Welcome to</h1>
         <p class="hero-subtitle">A historic firehouse transformed into a vibrant community venue</p>
         <div class="hero-actions">
           <a href="/events" class="btn">View Events</a>
@@ -45,7 +45,7 @@ const businesses = [
         </div>
       </div>
       <div class="hero-image">
-        <img src="/images/engine_no.43.png" alt="Engine 43 Firehouse illustration" />
+        <img src="/images/E43-Mia-Logo-final.png" alt="Engine 43" />
       </div>
     </div>
   </section>
@@ -125,6 +125,18 @@ const businesses = [
     margin-bottom: var(--spacing-md);
   }
 
+  .hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-image img {
+    max-width: 300px;
+    height: auto;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+  }
+
   .hero-subtitle {
     font-size: 1.25rem;
     opacity: 0.9;
@@ -135,18 +147,6 @@ const businesses = [
     display: flex;
     gap: var(--spacing-md);
     flex-wrap: wrap;
-  }
-
-  .hero-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .hero-image img {
-    max-width: 100%;
-    height: auto;
-    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
   }
 
   .btn-outline {
