@@ -31,6 +31,7 @@ const { name, description, image, href } = Astro.props;
     text-decoration: none;
     color: inherit;
     transition: transform 0.2s, box-shadow 0.2s;
+    height: 100%;
   }
 
   .business-card:hover {
@@ -53,6 +54,9 @@ const { name, description, image, href } = Astro.props;
 
   .business-content {
     padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
 
   .business-name {
@@ -64,11 +68,15 @@ const { name, description, image, href } = Astro.props;
     color: var(--color-text-muted);
     margin: 0 0 var(--spacing-md);
     font-family: var(--font-serif);
-    font-style: italic;
+    font-weight: 300;
+    font-style: normal;
   }
 
   .business-link {
     color: var(--color-primary);
-    font-weight: 500;
+    font-family: "freight-big-pro", serif;
+    font-weight: 900;
+    font-style: normal;
+    margin-top: auto;
   }
 </style>
