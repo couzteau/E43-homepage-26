@@ -13,13 +13,15 @@ const pastEvents = allEvents
 ---
 
 <BaseLayout title="Past Events" description="Browse past events at Engine 43">
+  <section class="hero-small">
+    <div class="container">
+      <h1>Past Events</h1>
+      <p>A look back at what we've hosted at Engine 43</p>
+    </div>
+  </section>
+
   <section class="section">
     <div class="container">
-      <div class="page-header">
-        <h1>Past Events</h1>
-        <p class="text-muted">A look back at what we've hosted at Engine 43</p>
-      </div>
-
       <div class="events-nav">
         <a href="/events" class="events-tab">Upcoming</a>
         <a href="/events/past" class="events-tab active">Past Events</a>
@@ -51,13 +53,23 @@ const pastEvents = allEvents
 </BaseLayout>
 
 <style>
-  .page-header {
+  .hero-small {
+    background-color: var(--color-accent);
+    color: white;
+    padding: var(--spacing-2xl) 0;
     text-align: center;
-    margin-bottom: var(--spacing-xl);
   }
 
-  .page-header h1 {
+  .hero-small h1 {
     margin-bottom: var(--spacing-sm);
+  }
+
+  .hero-small p {
+    opacity: 0.9;
+    font-size: 1.125rem;
+    font-family: var(--font-serif);
+    font-weight: var(--description-weight);
+    font-style: var(--description-style);
   }
 
   .events-nav {
