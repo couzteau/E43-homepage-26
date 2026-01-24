@@ -9,21 +9,21 @@ interface Props {
 const { name, description, image, href } = Astro.props;
 ---
 
-<a href={href} class="business-card card">
+<a href={href} class="project-card card">
   {image && (
-    <div class="business-image">
+    <div class="project-image">
       <img src={image} alt={name} loading="lazy" />
     </div>
   )}
-  <div class="business-content">
-    <h3 class="business-name">{name}</h3>
-    <p class="business-description">{description}</p>
-    <span class="business-link">Learn more &rarr;</span>
+  <div class="project-content">
+    <h3 class="project-name">{name}</h3>
+    <p class="project-description">{description}</p>
+    <span class="project-link">Learn more &rarr;</span>
   </div>
 </a>
 
 <style>
-  .business-card {
+  .project-card {
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -34,37 +34,37 @@ const { name, description, image, href } = Astro.props;
     height: 100%;
   }
 
-  .business-card:hover {
+  .project-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     text-decoration: none;
   }
 
-  .business-image {
+  .project-image {
     aspect-ratio: 4 / 3;
     overflow: hidden;
     background-color: var(--color-border);
   }
 
-  .business-image img {
+  .project-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  .business-content {
+  .project-content {
     padding: var(--spacing-lg);
     display: flex;
     flex-direction: column;
     flex-grow: 1;
   }
 
-  .business-name {
+  .project-name {
     margin: 0 0 var(--spacing-sm);
     font-size: 1.25rem;
   }
 
-  .business-description {
+  .project-description {
     color: var(--color-text-muted);
     margin: 0 0 var(--spacing-md);
     font-family: var(--font-serif);
@@ -72,7 +72,7 @@ const { name, description, image, href } = Astro.props;
     font-style: var(--description-style);
   }
 
-  .business-link {
+  .project-link {
     color: var(--color-primary);
     font-family: var(--font-serif);
     font-weight: var(--accent-weight);

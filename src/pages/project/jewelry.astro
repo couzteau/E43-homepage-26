@@ -12,7 +12,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   <section class="section">
     <div class="container content-container">
-      <article class="business-content">
+      <article class="project-content">
         <h2>Handcrafted Jewelry</h2>
         <p>
           Our jewelry studio at Engine 43 is where creativity meets craftsmanship. Each piece
@@ -61,7 +61,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         </div>
 
         <p class="back-link">
-          <a href="/business">&larr; Back to all businesses</a>
+          <a href="/project">&larr; Back to all projects</a>
         </p>
       </article>
     </div>
@@ -69,40 +69,21 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-  .hero-small {
-    background-color: var(--color-accent);
-    color: white;
-    padding: var(--spacing-2xl) 0;
-    text-align: center;
-  }
-
-  .hero-small h1 {
-    margin-bottom: var(--spacing-sm);
-  }
-
-  .hero-small p {
-    opacity: 0.9;
-    font-size: 1.125rem;
-    font-family: var(--font-serif);
-    font-weight: var(--description-weight);
-    font-style: var(--description-style);
-  }
-
   .content-container {
     max-width: 800px;
   }
 
-  .business-content h2 {
+  .project-content h2 {
     margin-top: 0;
     margin-bottom: var(--spacing-lg);
   }
 
-  .business-content h3 {
+  .project-content h3 {
     margin-top: var(--spacing-xl);
     margin-bottom: var(--spacing-md);
   }
 
-  .business-content p {
+  .project-content p {
     margin-bottom: var(--spacing-md);
     line-height: 1.8;
     font-family: var(--font-serif);

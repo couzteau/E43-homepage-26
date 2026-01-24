@@ -1,30 +1,30 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import BusinessCard from '../../components/BusinessCard.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
 
-const businesses = [
+const projects = [
   {
     name: 'Massage Therapy',
     description: 'Professional therapeutic massage services in a relaxing environment. From Swedish to deep tissue, find the treatment that works for you.',
-    href: '/business/massage',
+    href: '/project/massage',
   },
   {
     name: 'Through the Looking Glass',
     description: 'Handcrafted jewelry and custom designs by local artisans. Unique pieces created with care and attention to detail.',
-    href: '/business/jewelry',
+    href: '/project/jewelry',
   },
   {
     name: 'Art Studio',
     description: 'Painting, screenprinting, and creative workshops. Explore your artistic side with our resident artists.',
-    href: '/business/art',
+    href: '/project/art',
   },
 ];
 ---
 
-<BaseLayout title="Businesses" description="Discover the businesses and artisans at Engine 43">
+<BaseLayout title="Projects" description="Discover the projects and artisans at Engine 43">
   <section class="hero-small">
     <div class="container">
-      <h1>Our Businesses</h1>
+      <h1>Our Projects</h1>
       <p>Meet the talented people who make Engine 43 their home</p>
     </div>
   </section>
@@ -38,11 +38,11 @@ const businesses = [
       </p>
 
       <div class="grid grid-3">
-        {businesses.map(business => (
-          <BusinessCard
-            name={business.name}
-            description={business.description}
-            href={business.href}
+        {projects.map(project => (
+          <ProjectCard
+            name={project.name}
+            description={project.description}
+            href={project.href}
           />
         ))}
       </div>
