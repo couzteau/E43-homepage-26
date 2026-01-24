@@ -84,8 +84,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     opacity: 0.9;
     font-size: 1.125rem;
     font-family: var(--font-serif);
-    font-weight: 300;
-    font-style: normal;
+    font-weight: var(--description-weight);
+    font-style: var(--description-style);
   }
 
   .content-container {
@@ -106,8 +106,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     margin-bottom: var(--spacing-md);
     line-height: 1.8;
     font-family: var(--font-serif);
-    font-weight: 300;
-    font-style: normal;
+    font-weight: var(--description-weight);
+    font-style: var(--description-style);
   }
 
   .services-list {
@@ -130,14 +130,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   .services-list strong {
     color: var(--color-primary);
+    font-family: var(--font-serif);
+    font-weight: var(--accent-weight);
+    font-style: var(--accent-style);
   }
 
   .services-list span {
     color: var(--color-text-muted);
     font-size: 0.95rem;
     font-family: var(--font-serif);
-    font-weight: 300;
-    font-style: normal;
+    font-weight: var(--description-weight);
+    font-style: var(--description-style);
   }
 
   .contact-card {

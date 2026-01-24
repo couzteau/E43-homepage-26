@@ -68,15 +68,15 @@ const { name, description, image, href } = Astro.props;
     color: var(--color-text-muted);
     margin: 0 0 var(--spacing-md);
     font-family: var(--font-serif);
-    font-weight: 300;
-    font-style: normal;
+    font-weight: var(--description-weight);
+    font-style: var(--description-style);
   }
 
   .business-link {
     color: var(--color-primary);
-    font-family: "freight-big-pro", serif;
-    font-weight: 900;
-    font-style: normal;
+    font-family: var(--font-serif);
+    font-weight: var(--accent-weight);
+    font-style: var(--accent-style);
     margin-top: auto;
   }
 </style>
