@@ -24,7 +24,7 @@ The Etsy store / retail brand for art and crafts. Name references *The Princess 
 - **Content:** Markdown with frontmatter
 - **Hosting:** Cloudflare Pages or Netlify
 - **Forms:** Native platform forms or third-party embed (Buttondown, Mailchimp)
-- **Design Style:** Bohemian / artistic (inspired by Kater Blau) - organic typography, muted earthy tones, handcrafted feel
+- **Design Style:** Bohemian / artistic - organic typography, muted earthy tones, handcrafted feel
 
 ---
 
