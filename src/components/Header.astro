@@ -62,7 +62,7 @@ const navLinks = [
   }
 
   /* Medium width: hide Mia logo, keep SVG */
-  @container (max-width: 700px) {
+  @container (max-width: 500px) {
     .header-logo {
       display: none;
     }
@@ -73,7 +73,7 @@ const navLinks = [
   }
 
   /* Narrow width: hide SVG, show Mia logo */
-  @container (max-width: 500px) {
+  @container (max-width: 300px) {
     .header-logo {
       display: flex;
     }
@@ -201,8 +201,32 @@ const navLinks = [
   }
 
   @media (max-width: 500px) {
+    .header-logo {
+      display: none;
+    }
+
+    .header-content {
+      padding-top: var(--spacing-md);
+      padding-bottom: var(--spacing-md);
+    }
+  }
+
+  @media (max-width: 300px) {
+    .header-logo {
+      display: flex;
+    }
+
     .logo {
       display: none;
+    }
+
+    .header-content {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .header-logo-img {
+      height: 64px;
     }
   }
 </style>
