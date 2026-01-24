@@ -13,7 +13,8 @@
   /* Typography - Font Families */
   --font-serif: "freight-big-pro", serif;
   --font-display: "freight-big-pro", serif;
-  --font-ui: 'Courier New', Courier, monospace;
+  --font-ui: 'p22-typewriter', 'Courier New', Courier, monospace;
+
 
   /* Typography - Heading Style (italic titles) */
   --heading-weight: 400;
