@@ -43,7 +43,7 @@ The Etsy store / retail brand for art and crafts. Name references *The Princess 
 | Jewelry | Business page for roommate's jewelry |
 | Art & Screenprint | Business page for painting/screenprinting |
 | Coffee | Business page for coffee roasting |
-| Mia & Fat Louie | Etsy store info/link |
+| Chez Mia & Fat Louie | Etsy store info/link |
 
 ### Entry Points
 
