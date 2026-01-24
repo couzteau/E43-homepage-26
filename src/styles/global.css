@@ -12,7 +12,7 @@
 
   /* Typography - Font Families */
   --font-serif: "freight-big-pro", serif;
-  --font-display: "freight-big-pro", serif;
+  --font-display: "grand-central,freight-big-pro", serif;
   --font-ui: 'p22-typewriter', 'Courier New', Courier, monospace;
 
 
