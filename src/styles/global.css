@@ -13,7 +13,7 @@
   /* Theme-specific: hero section */
   --hero-bg-image: url('/images/desert-sky-day.png');
   --hero-gradient: linear-gradient(135deg, rgba(232, 196, 176, 0.85) 0%, rgba(139, 159, 184, 0.75) 100%);
-  --hero-small-gradient: linear-gradient(135deg, #D4C4B0 0%, #8B9FB8 100%);
+  --hero-small-gradient: linear-gradient(135deg, #E8DDD0 0%, #C5D0DC 100%);
 
   /* Theme-specific: header */
   --header-bg: var(--color-primary-dark);
@@ -32,6 +32,9 @@
 
   /* Theme-specific: form inputs */
   --input-border: var(--color-border);
+
+  /* Theme-specific: links */
+  --link-color: var(--color-primary);
 
   /* Typography - Font Families */
   --font-serif: "freight-big-pro", serif;
@@ -67,17 +70,17 @@
     --color-primary: #C45C54;         /* Lighter burgundy for dark bg */
     --color-primary-dark: #A84840;    /* Medium burgundy */
     --color-secondary: #A89078;       /* Lighter warm brown */
-    --color-accent: #3D3D5C;          /* Dark purple-gray */
-    --color-background: #1A1A2E;      /* Deep night blue */
-    --color-surface: #2D2D44;         /* Dark surface */
+    --color-accent: #1C1C1C;          /* Neutral dark gray */
+    --color-background: #121212;      /* Pure dark gray */
+    --color-surface: #1E1E1E;         /* Neutral surface */
     --color-text: #E8E4DC;            /* Cream text */
     --color-text-muted: #9CA3AF;      /* Lighter muted */
-    --color-border: #3D3D5C;          /* Dark border */
+    --color-border: #333333;          /* Neutral border */
 
     /* Theme-specific: hero section */
     --hero-bg-image: url('/images/NightSky.png');
-    --hero-gradient: linear-gradient(135deg, rgba(45, 45, 68, 0.75) 0%, rgba(26, 26, 46, 0.85) 100%);
-    --hero-small-gradient: linear-gradient(135deg, #2D2D44 0%, #1A1A2E 100%);
+    --hero-gradient: linear-gradient(135deg, rgba(30, 30, 30, 0.75) 0%, rgba(18, 18, 18, 0.85) 100%);
+    --hero-small-gradient: linear-gradient(135deg, #2A2A2A 0%, #1E1E1E 100%);
 
     /* Theme-specific: header */
     --header-bg: #3b130f;
@@ -85,7 +88,7 @@
     --logo-filter: brightness(0) invert(1);
 
     /* Theme-specific: footer */
-    --footer-bg: #0D0D1A;
+    --footer-bg: #0A0A0A;
     --footer-text: #E8E4DC;
 
     /* Theme-specific: buttons (consistent across themes) */
@@ -98,7 +101,10 @@
     --input-border: #E8E4DC;
 
     /* Theme-specific: tabs */
-    --tab-active-color: white;
+    --tab-active-color: var(--color-secondary);
+
+    /* Theme-specific: links */
+    --link-color: var(--color-secondary);
   }
 }
 
@@ -146,7 +152,7 @@ h3 {
 }
 
 a {
-  color: var(--color-primary);
+  color: var(--link-color);
   text-decoration: none;
 }
 
