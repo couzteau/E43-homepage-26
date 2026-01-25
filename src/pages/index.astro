@@ -50,7 +50,7 @@ const projects = [
     </div>
   </section>
 
-  <section class="section">
+  <section class="section section-hero-flipped">
     <div class="container">
       <h2 class="section-title">Upcoming Events</h2>
       {upcomingEvents.length > 0 ? (
@@ -106,7 +106,6 @@ const projects = [
     background: var(--hero-gradient), var(--hero-bg-image);
     background-size: cover;
     background-position: center;
-    color: white;
     overflow: hidden;
   }
 
@@ -176,6 +175,7 @@ const projects = [
   .section-alt {
     background-color: var(--color-border);
   }
+
 
   @media (max-width: 768px) {
     .hero-content {
