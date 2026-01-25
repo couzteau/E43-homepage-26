@@ -25,7 +25,7 @@
   --logo-filter: brightness(0) invert(1);
 
   /* Theme-specific: footer */
-  --footer-bg: #2D3339;
+  --footer-bg: var(--header-bg);
   --footer-text: white;
 
   /* Theme-specific: buttons (consistent across themes) */
@@ -72,7 +72,7 @@
 /* Dark theme - from night sky image */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-primary: #C45C54;         /* Lighter burgundy for dark bg */
+    --color-primary: var(--color-primary);         /* Lighter burgundy for dark bg */
     --color-primary-dark: #A84840;    /* Medium burgundy */
     --color-secondary: #bba998;       /* Lighter warm brown */
     --color-accent: #1C1C1C;          /* Neutral dark gray */
@@ -97,7 +97,7 @@
     --logo-filter: brightness(0) invert(1);
 
     /* Theme-specific: footer */
-    --footer-bg: #0A0A0A;
+    --footer-bg: var(--header-bg);
     --footer-text: #E8E4DC;
 
     /* Theme-specific: buttons (consistent across themes) */
