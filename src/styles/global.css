@@ -32,6 +32,7 @@
 
   /* Theme-specific: form inputs */
   --input-border: var(--color-border);
+  --input-bg: var(--color-surface);
 
   /* Theme-specific: links */
   --link-color: var(--color-primary);
@@ -99,6 +100,7 @@
 
     /* Theme-specific: form inputs */
     --input-border: #E8E4DC;
+    --input-bg: #2A2A2A;
 
     /* Theme-specific: tabs */
     --tab-active-color: var(--color-secondary);
@@ -177,7 +179,7 @@ img {
   padding: 12px 28px;
   background-color: var(--btn-bg);
   color: var(--btn-text);
-  border: 2px solid var(--btn-border);
+  border: 0.5px solid var(--btn-border);
   border-radius: 2px;
   font-family: var(--font-ui);
   font-size: 1rem;
@@ -205,7 +207,7 @@ img {
 .btn-outline {
   background-color: transparent;
   color: var(--btn-bg);
-  border: 1px solid var(--btn-border);
+  border: 0.5px solid var(--btn-border);
 }
 
 .btn-secondary:hover,
@@ -226,7 +228,7 @@ select {
   border-radius: 2px;
   font-size: 1rem;
   font-family: var(--font-ui);
-  background-color: var(--color-surface);
+  background-color: var(--input-bg);
   color: var(--color-text);
   transition: border-color 0.2s ease;
 }
