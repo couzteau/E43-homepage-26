@@ -19,9 +19,6 @@
   /* Flipped version for sections that follow hero */
   --hero-gradient-flipped: linear-gradient(to bottom, rgba(216, 195, 180, 0.85) 0%, rgba(169, 186, 204, 0.85) 100%);
 
-  /* Background blur for hero sections */
-  --hero-blur: 4px;
-
   /* Theme-specific: header */
   --header-bg: var(--color-primary-dark);
   --header-text: white;
