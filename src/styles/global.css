@@ -1,14 +1,37 @@
 :root {
-  /* Colors - earthy bohemian palette */
-  --color-primary: #3b130f;         /* Burgundy/maroon - door & trim */
-  --color-primary-dark: #471914;    /* Darker burgundy */
+  /* Light theme (default) - from house illustration & desert sky */
+  --color-primary: #471914;         /* Burgundy/maroon - door & trim */
+  --color-primary-dark: #3b130f;    /* Darker burgundy */
   --color-secondary: #5C4A3D;       /* Warm brown - fence & stairs */
-  --color-accent: #e7dfcf;          /* Dark slate */
+  --color-accent: #e7dfcf;          /* Warm beige */
   --color-background: #F5F0E6;      /* Cream - building walls */
   --color-surface: #FEFDFB;         /* Lighter cream */
   --color-text: #2D3339;            /* Dark slate for text */
   --color-text-muted: #6B7280;      /* Muted gray */
   --color-border: #E5DFD3;          /* Warm border */
+
+  /* Theme-specific: hero section */
+  --hero-bg-image: url('/images/desert-sky-day.png');
+  --hero-gradient: linear-gradient(135deg, rgba(232, 196, 176, 0.85) 0%, rgba(139, 159, 184, 0.75) 100%);
+  --hero-small-gradient: linear-gradient(135deg, #D4C4B0 0%, #8B9FB8 100%);
+
+  /* Theme-specific: header */
+  --header-bg: var(--color-primary-dark);
+  --header-text: white;
+  --logo-filter: brightness(0) invert(1);
+
+  /* Theme-specific: footer */
+  --footer-bg: #2D3339;
+  --footer-text: white;
+
+  /* Theme-specific: buttons (consistent across themes) */
+  --btn-bg: #3b130f;
+  --btn-text: white;
+  --btn-border: #3b130f;
+  --btn-hover-bg: transparent;
+
+  /* Theme-specific: form inputs */
+  --input-border: var(--color-border);
 
   /* Typography - Font Families */
   --font-serif: "freight-big-pro", serif;
@@ -36,6 +59,47 @@
   --spacing-lg: 1.5rem;
   --spacing-xl: 2rem;
   --spacing-2xl: 3rem;
+}
+
+/* Dark theme - from night sky image */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #C45C54;         /* Lighter burgundy for dark bg */
+    --color-primary-dark: #A84840;    /* Medium burgundy */
+    --color-secondary: #A89078;       /* Lighter warm brown */
+    --color-accent: #3D3D5C;          /* Dark purple-gray */
+    --color-background: #1A1A2E;      /* Deep night blue */
+    --color-surface: #2D2D44;         /* Dark surface */
+    --color-text: #E8E4DC;            /* Cream text */
+    --color-text-muted: #9CA3AF;      /* Lighter muted */
+    --color-border: #3D3D5C;          /* Dark border */
+
+    /* Theme-specific: hero section */
+    --hero-bg-image: url('/images/NightSky.png');
+    --hero-gradient: linear-gradient(135deg, rgba(45, 45, 68, 0.75) 0%, rgba(26, 26, 46, 0.85) 100%);
+    --hero-small-gradient: linear-gradient(135deg, #2D2D44 0%, #1A1A2E 100%);
+
+    /* Theme-specific: header */
+    --header-bg: #3b130f;
+    --header-text: white;
+    --logo-filter: brightness(0) invert(1);
+
+    /* Theme-specific: footer */
+    --footer-bg: #0D0D1A;
+    --footer-text: #E8E4DC;
+
+    /* Theme-specific: buttons (consistent across themes) */
+    --btn-bg: #3b130f;
+    --btn-text: white;
+    --btn-border: #A89890;
+    --btn-hover-bg: #E8E4DC;
+
+    /* Theme-specific: form inputs */
+    --input-border: #E8E4DC;
+
+    /* Theme-specific: tabs */
+    --tab-active-color: white;
+  }
 }
 
 *,
@@ -105,9 +169,9 @@ img {
 .btn {
   display: inline-block;
   padding: 12px 28px;
-  background-color: var(--color-primary);
-  color: white;
-  border: 1px solid var(--color-primary);
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: 2px solid var(--btn-border);
   border-radius: 2px;
   font-family: var(--font-ui);
   font-size: 1rem;
@@ -120,8 +184,8 @@ img {
 }
 
 .btn:hover {
-  background-color: transparent;
-  color: var(--color-primary);
+  background-color: var(--btn-hover-bg);
+  color: var(--btn-bg);
   text-decoration: none;
 }
 
@@ -134,14 +198,14 @@ img {
 .btn-secondary,
 .btn-outline {
   background-color: transparent;
-  color: var(--color-primary);
-  border: 1px solid var(--color-primary);
+  color: var(--btn-bg);
+  border: 1px solid var(--btn-border);
 }
 
 .btn-secondary:hover,
 .btn-outline:hover {
-  background-color: var(--color-primary);
-  color: white;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
 }
 
 /* Form Inputs */
@@ -152,7 +216,7 @@ input[type="search"],
 textarea,
 select {
   padding: 12px 16px;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--input-border);
   border-radius: 2px;
   font-size: 1rem;
   font-family: var(--font-ui);
@@ -239,8 +303,7 @@ select:focus {
 
 /* Page header for interior pages */
 .hero-small {
-  background: linear-gradient(135deg, var(--color-accent) 0%, #2D3339 100%);
-  background-color: var(--color-accent);
+  background: var(--hero-small-gradient);
   color: white;
   padding: var(--spacing-2xl) 0;
   text-align: center;
@@ -280,14 +343,14 @@ select:focus {
 }
 
 .events-tab:hover {
-  color: var(--color-primary);
+  color: var(--tab-active-color, var(--color-primary));
   text-decoration: none;
 }
 
 .events-tab.active {
-  color: var(--color-primary);
+  color: var(--tab-active-color, var(--color-primary));
   font-weight: 500;
-  border-bottom: 2px solid var(--color-primary);
+  border-bottom: 2px solid var(--tab-active-color, var(--color-primary));
   margin-bottom: -1px;
 }
 

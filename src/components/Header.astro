@@ -41,8 +41,8 @@ const navLinks = [
 
 <style>
   .site-header {
-    background-color: var(--color-primary);
-    color: white;
+    background-color: var(--header-bg);
+    color: var(--header-text);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -108,7 +108,7 @@ const navLinks = [
   .logo-text {
     height: 32px;
     width: auto;
-    filter: brightness(0) invert(1);
+    filter: var(--logo-filter);
   }
 
   .nav-list {
@@ -120,7 +120,7 @@ const navLinks = [
   }
 
   .nav-link {
-    color: white;
+    color: var(--header-text);
     opacity: 0.9;
     transition: opacity 0.2s;
     font-family: var(--font-ui);
@@ -136,7 +136,7 @@ const navLinks = [
   }
 
   .nav-link.active {
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid var(--header-text);
     padding-bottom: 2px;
   }
 
@@ -152,7 +152,7 @@ const navLinks = [
     display: block;
     width: 24px;
     height: 2px;
-    background-color: white;
+    background-color: var(--header-text);
     position: relative;
   }
 
@@ -162,7 +162,7 @@ const navLinks = [
     position: absolute;
     width: 24px;
     height: 2px;
-    background-color: white;
+    background-color: var(--header-text);
     left: 0;
   }
 
@@ -185,7 +185,7 @@ const navLinks = [
       top: 100%;
       left: 0;
       right: 0;
-      background-color: var(--color-primary);
+      background-color: var(--header-bg);
       flex-direction: column;
       padding: var(--spacing-md);
       gap: var(--spacing-md);

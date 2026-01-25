@@ -103,8 +103,9 @@ const projects = [
 
 <style>
   .hero {
-    background: linear-gradient(135deg, var(--color-accent) 0%, #2D3339 100%);
-    background-color: var(--color-accent);
+    background: var(--hero-gradient), var(--hero-bg-image);
+    background-size: cover;
+    background-position: center;
     color: white;
     overflow: hidden;
   }
@@ -148,7 +149,7 @@ const projects = [
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    background-image: url('/images/NightSky.png');
+    background-image: var(--hero-bg-image);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -163,13 +164,13 @@ const projects = [
 
   .btn-outline {
     background-color: rgba(255, 255, 255, 0.15);
-    border: 2px solid white;
+    border: 2px solid var(--btn-border);
     color: white;
   }
 
   .btn-outline:hover {
     background-color: white;
-    color: var(--color-primary);
+    color: var(--btn-bg);
   }
 
   .section-alt {
