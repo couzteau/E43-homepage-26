@@ -84,7 +84,7 @@
     --color-border-hover: #6B6B6B;    /* Lighter hover border */
 
     /* Theme-specific: hero section - dark sky at top, warm horizon at bottom */
-    --hero-bg-image: url('/images/NightSky.png');
+    --hero-bg-image: url('/images/nightsky/AdobeStock_551857355.jpeg');
     --hero-gradient: linear-gradient(to bottom, rgba(26, 26, 46, 0.8) 0%, rgba(70, 50, 45, 0.75) 100%);
     --hero-small-gradient: linear-gradient(to bottom, #1A1A2E 0%, #46322D 100%);
 
