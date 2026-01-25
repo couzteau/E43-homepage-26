@@ -74,7 +74,7 @@
   :root {
     --color-primary: #C45C54;         /* Lighter burgundy for dark bg */
     --color-primary-dark: #A84840;    /* Medium burgundy */
-    --color-secondary: #A89078;       /* Lighter warm brown */
+    --color-secondary: #bba998;       /* Lighter warm brown */
     --color-accent: #1C1C1C;          /* Neutral dark gray */
     --color-background: #121212;      /* Pure dark gray */
     --color-surface: #1E1E1E;         /* Neutral surface */
@@ -311,7 +311,7 @@ select:focus {
   inset: 0;
   background: var(--hero-bg-image);
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   transform: scaleY(-1);
   z-index: -2;
 }
