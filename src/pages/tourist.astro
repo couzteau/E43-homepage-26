@@ -24,7 +24,7 @@ const upcomingEvents = allEvents
     </div>
   </section>
 
-  <section class="quick-links section">
+  <section class="quick-links section section-hero-flipped">
     <div class="container">
       <div class="links-grid">
         <a href="/events" class="quick-link-card">
@@ -47,7 +47,7 @@ const upcomingEvents = allEvents
   </section>
 
   {upcomingEvents.length > 0 && (
-    <section class="upcoming section">
+    <section class="upcoming section section-hero-bg">
       <div class="container">
         <h2>Coming Up</h2>
         <div class="upcoming-list">
@@ -69,7 +69,7 @@ const upcomingEvents = allEvents
     </section>
   )}
 
-  <section class="section">
+  <section class="section section-hero-flipped">
     <div class="container">
       <ButtondownSignup
         heading="Stay Connected"
@@ -78,7 +78,7 @@ const upcomingEvents = allEvents
     </div>
   </section>
 
-  <section class="trivia section">
+  <section class="trivia section section-hero-bg">
     <div class="container">
       <div class="trivia-card card">
         <h3>Fun Fact</h3>
@@ -157,7 +157,6 @@ const upcomingEvents = allEvents
   }
 
   .upcoming {
-    background-color: var(--color-border);
     text-align: center;
   }
 

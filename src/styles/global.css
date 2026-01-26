@@ -300,6 +300,31 @@ select:focus {
   padding: var(--spacing-2xl) 0;
 }
 
+/* Right-side-up hero background for sections */
+.section-hero-bg {
+  position: relative;
+  isolation: isolate;
+}
+
+.section-hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--hero-bg-image);
+  background-size: cover;
+  background-position: bottom;
+  z-index: -2;
+}
+
+.section-hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--hero-gradient);
+  z-index: -1;
+}
+
+/* Flipped hero background for alternating sections */
 .section-hero-flipped {
   position: relative;
   isolation: isolate;
