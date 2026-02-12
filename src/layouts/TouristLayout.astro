@@ -1,4 +1,6 @@
 ---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -20,63 +22,16 @@ const { title, description = 'Welcome to Engine 43 - A historic firehouse venue'
     <title>{title} | Engine 43</title>
   </head>
   <body>
-    <header class="tourist-header">
-      <div class="container">
-        <a href="/tourist" class="logo">Engine 43</a>
-      </div>
-    </header>
+    <Header />
     <main>
       <slot />
     </main>
-    <footer class="tourist-footer">
-      <div class="container">
-        <p>&copy; {new Date().getFullYear()} Engine 43. All rights reserved.</p>
-        <p><a href="/">Visit full site</a></p>
-      </div>
-    </footer>
+    <Footer />
   </body>
 </html>
 
 <style>
-  .tourist-header {
-    background-color: var(--color-primary);
-    color: white;
-    padding: var(--spacing-md) 0;
-    text-align: center;
-  }
-
-  .tourist-header .logo {
-    color: white;
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-
-  .tourist-header .logo:hover {
-    text-decoration: none;
-  }
-
   main {
-    min-height: calc(100vh - 160px);
-  }
-
-  .tourist-footer {
-    background-color: var(--color-text);
-    color: white;
-    padding: var(--spacing-lg) 0;
-    text-align: center;
-  }
-
-  .tourist-footer p {
-    margin: var(--spacing-xs) 0;
-  }
-
-  .tourist-footer a {
-    color: white;
-    opacity: 0.8;
-  }
-
-  .tourist-footer a:hover {
-    opacity: 1;
+    min-height: calc(100vh - 200px);
   }
 </style>
