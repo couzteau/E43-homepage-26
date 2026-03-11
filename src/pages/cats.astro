@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="The Firehouse Cats"
+  description="Meet Mia, Emerald, Zaphire, and Major Tom — Fat Louie's cousins at Engine 43."
+>
+  <section class="hero-small">
+    <div class="container">
+      <h1>Fat Louie's Cousins</h1>
+      <p>Meet the real cats of Engine 43.</p>
+    </div>
+  </section>
+
+  <section class="section section-hero-flipped">
+    <div class="container">
+      <p class="intro">Fat Louie — Mia Thermopolis's orange tabby — is the fictional cat this firehouse is partly named after. But the real Engine 43 has its own crew.</p>
+
+      <!-- MIA -->
+      <h2 class="cat-name">Mia</h2>
+      <p class="cat-bio">Named after the princess herself. She knows it.</p>
+      <div class="cats-grid">
+        <div class="cat-card"><img src="/images/tourist/cats/Mia.jpg" alt="Mia" /></div>
+        <div class="cat-card"><img src="/images/tourist/cats/mia-sun.jpg" alt="Mia" /></div>
+        <div class="cat-card"><img src="/images/tourist/cats/2-mia.jpg" alt="Mia" /></div>
+      </div>
+
+      <!-- EMERALD -->
+      <h2 class="cat-name">Emerald</h2>
+      <p class="cat-bio">Green eyes, strong opinions, co-owner of the studio.</p>
+      <div class="cats-grid">
+        <div class="cat-card"><img src="/images/tourist/cats/Emerald.jpg" alt="Emerald" /></div>
+        <div class="cat-card"><img src="/images/tourist/cats/2-emerald.jpg" alt="Emerald" /></div>
+        <div class="cat-card"><img src="/images/tourist/cats/Emerald2.jpg" alt="Emerald" /></div>
+      </div>
+
+      <!-- ZAPHIRE -->
+      <h2 class="cat-name">Zaphire</h2>
+      <p class="cat-bio">A true San Franciscan.</p>
+      <div class="cats-grid">
+        <div class="cat-card"><img src="/images/tourist/cats/1%20Zaphire.jpg" alt="Zaphire" /></div>
+        <div class="cat-card"><img src="/images/tourist/cats/2%20zaphire.jpg" alt="Zaphire" /></div>
+        <div class="cat-card"><img src="/images/tourist/cats/3%20Zaphire.jpg" alt="Zaphire" /></div>
+      </div>
+
+      <!-- MAJOR TOM -->
+      <h2 class="cat-name">Major Tom</h2>
+      <p class="cat-bio">Floating in a most peculiar way — usually on the best chair in the house.</p>
+      <div class="cats-grid">
+        <div class="cat-card"><img src="/images/tourist/cats/Major%20Tom.jpg" alt="Major Tom" style="object-position: top;" /></div>
+        <div class="cat-card"><img src="/images/tourist/cats/1-tom.jpg" alt="Major Tom" /></div>
+        <div class="cat-card"><img src="/images/tourist/cats/3-tom.jpg" alt="Major Tom" /></div>
+      </div>
+
+      <!-- TOGETHER -->
+      <h2 class="cat-name">Together</h2>
+      <p class="cat-bio">Inseparable. Unless there's only one sunny spot.</p>
+      <div class="cats-grid">
+        <div class="cat-card"><img src="/images/tourist/cats/Emerald+Zaphire.jpg" alt="Emerald and Zaphire" /></div>
+        <div class="cat-card"><img src="/images/tourist/cats/1-%20emerald+Zaphire.jpg" alt="Emerald and Zaphire" /></div>
+        <div class="cat-card"><img src="/images/tourist/cats/Emerald+Zaphire2.jpg" alt="Emerald and Zaphire" /></div>
+        <div class="cat-card"><img src="/images/tourist/cats/Mia+Tom.jpg" alt="Mia and Major Tom" /></div>
+      </div>
+
+      <p class="back-link"><a href="/tourist">&larr; Back to the firehouse</a></p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .intro {
+    max-width: 620px;
+    margin: 0 auto var(--spacing-2xl);
+    text-align: center;
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+  }
+
+  .cat-name {
+    margin-top: var(--spacing-2xl);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .cat-bio {
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .cats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+  }
+
+  .cat-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+  }
+
+  .back-link {
+    margin-top: var(--spacing-2xl);
+    text-align: center;
+    font-family: var(--font-ui);
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: 768px) {
+    .cats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cats-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

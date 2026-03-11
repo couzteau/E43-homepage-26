@@ -6,9 +6,10 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  hideLinks?: boolean;
 }
 
-const { title, description = 'Engine 43 - A historic firehouse venue in the heart of the community' } = Astro.props;
+const { title, description = 'Engine 43 - A historic firehouse venue in the heart of the community', hideLinks = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -26,7 +27,7 @@ const { title, description = 'Engine 43 - A historic firehouse venue in the hear
     <main>
       <slot />
     </main>
-    <Footer />
+    <Footer hideLinks={hideLinks} />
   </body>
 </html>
 

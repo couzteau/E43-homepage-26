@@ -1,226 +1,346 @@
 ---
 import TouristLayout from '../layouts/TouristLayout.astro';
 import ButtondownSignup from '../components/ButtondownSignup.astro';
-import { getCollection } from 'astro:content';
-
-const allEvents = await getCollection('events');
-const now = new Date();
-now.setHours(0, 0, 0, 0);
-
-const upcomingEvents = allEvents
-  .filter(event => event.data.date >= now)
-  .sort((a, b) => a.data.date.getTime() - b.data.date.getTime())
-  .slice(0, 2);
 ---
 
-<TouristLayout title="Welcome" description="Welcome to Engine 43 - A historic San Francisco firehouse">
-  <section class="hero-small">
+<TouristLayout
+  title="You Found the Princess Diaries Firehouse"
+  description="724 Brazil Ave, San Francisco's Excelsior District. A working firehouse since 1912. Mia Thermopolis's home since 2001. A residence and community art space today."
+>
+
+  <!-- HERO -->
+  <section class="hero-small hero-tourist">
     <div class="container">
-      <h1>Welcome to Engine 43!</h1>
-      <p>You're standing in a piece of San Francisco history. This former firehouse has been transformed into a vibrant community space.</p>
+      <h1>You found the<br />Princess Diaries firehouse.</h1>
+      <p class="hero-address">724 Brazil Ave · San Francisco's Excelsior District</p>
+      <p class="hero-sub">A working firehouse since 1912. Mia Thermopolis's home since 2001. A residence and community art space today.</p>
     </div>
   </section>
 
-  <section class="quick-links section section-hero-flipped">
-    <div class="container">
-      <div class="links-grid">
-        <a href="/events" class="quick-link-card">
-          <span class="quick-link-icon">📅</span>
-          <h3>Events</h3>
-          <p>See what's happening</p>
-        </a>
-        <a href="/project" class="quick-link-card">
-          <span class="quick-link-icon">🏪</span>
-          <h3>Projects</h3>
-          <p>Meet our artisans</p>
-        </a>
-        <a href="/history" class="quick-link-card">
-          <span class="quick-link-icon">🏛️</span>
-          <h3>History</h3>
-          <p>Our firehouse story</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  {upcomingEvents.length > 0 && (
-    <section class="upcoming section section-hero-bg">
-      <div class="container">
-        <h2>Coming Up</h2>
-        <div class="upcoming-list">
-          {upcomingEvents.map(event => (
-            <div class="upcoming-item">
-              <div class="upcoming-date">
-                <span class="day">{event.data.date.getDate()}</span>
-                <span class="month">{event.data.date.toLocaleDateString('en-US', { month: 'short' })}</span>
-              </div>
-              <div class="upcoming-info">
-                <h4>{event.data.title}</h4>
-                <p>{event.data.time && `${event.data.time} · `}{event.data.location}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-        <a href="/events" class="btn" style="margin-top: var(--spacing-lg);">View All Events</a>
-      </div>
-    </section>
-  )}
-
+  <!-- INSIDE THE FIREHOUSE -->
   <section class="section section-hero-flipped">
     <div class="container">
+      <h2 class="section-title">Inside the Firehouse</h2>
+      <p class="section-intro">Most visitors only see the outside. Here's what's behind the big red doors.</p>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="/images/tourist/pole1.jpg" alt="The fire pole at Engine 43" />
+          <figcaption>
+            <strong>The Pole</strong>
+            Yes, it's real. Yes, it still works. It runs from the third floor all the way down to the garage — just like in the movie.
+          </figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="/images/tourist/SpiralStaircase.jpg" alt="The original cast iron spiral staircase" />
+          <figcaption>
+            <strong>The Spiral Staircase</strong>
+            The original cast iron staircase the firefighters used. Mia walked these same steps.
+          </figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="/images/tourist/Tower.jpg" alt="The Princess Tower — now an art studio" class="align-top" />
+          <figcaption>
+            <strong>The Princess Tower</strong>
+            The hose-drying tower is now an art studio. On a clear day you can see downtown, the bay, and the hills of the Excelsior.
+          </figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="/images/tourist/ArtSpan.jpg" alt="The firehouse garage" />
+          <figcaption>
+            <strong>The Garage</strong>
+            Where Engine No. 43 once parked. Now it hosts art markets, music, and community gatherings.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE DOOR -->
+  <section class="section section-hero-bg">
+    <div class="container">
+      <div class="door-layout">
+        <div class="door-image">
+          <img src="/images/tourist/Door.jpg" alt="Resist Much Obey Little — Princess Mia and Princess Leia door mural" />
+        </div>
+        <div class="door-text">
+          <h2>Princesses can be rebels.</h2>
+          <p>The two women on our door are Princess Mia — pre-transformation, wild curly hair intact — and her sister in spirit, Princess Leia.</p>
+<p>This is the Excelsior — a neighborhood of immigrants, families, and working people. We watch out for each other here. We warn our neighbors. We show up.</p>
+          <p class="door-cta">Take a photo. Share it. The more people see it, the further the message travels.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOLY MOLY CHRISTMAS MARKET -->
+  <section class="section section-hero-flipped text-center">
+    <div class="container">
+      <h2 class="section-title">Come back in December.</h2>
+      <div class="holymoly-photo">
+        <img src="/images/tourist/holymoly.jpeg" alt="Holy Moly Christmas Market 2025 — view from above" />
+        <p class="photo-caption">Holy Moly Christmas Market 2025 — view from above.</p>
+      </div>
+      <p class="holymoly-body">Every year we transform the firehouse into San Francisco's most unexpected holiday market. Local artists, handmade goods, live music, and neighbors spilling out onto Brazil Ave.</p>
+      <p class="holymoly-body">It started small in 2020 to support our local artist community. Last year we had lines around the block.</p>
+      <p class="holymoly-date">December 2026 date coming soon.</p>
+      <a href="#signup" class="btn">Sign up to be first to know</a>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER SIGNUP -->
+  <section id="signup" class="section section-hero-bg">
+    <div class="container">
       <ButtondownSignup
-        heading="Stay Connected"
-        description="Get updates on events and happenings at Engine 43"
+        heading="Stay connected."
+        description="Be the first to know when Holy Moly tickets drop. Get updates on art markets, events, and what's happening at the firehouse. We send a few emails a year — only when it matters."
+        buttonText="Sign me up"
       />
     </div>
   </section>
 
-  <section class="trivia section section-hero-bg">
-    <div class="container">
-      <div class="trivia-card card">
-        <h3>Fun Fact</h3>
-        <p>
-          Engine 43 was featured in "The Princess Diaries" (2001)!
-          Look around - you might recognize this space from the movie.
-        </p>
-        <a href="/history">Learn more about our history &rarr;</a>
+  <!-- MIA & FAT LOUIE'S + SCREENPRINTING -->
+  <section class="section section-hero-flipped">
+    <div class="container cta-pair">
+      <div class="cta-block">
+        <h2>Mia &amp; Fat Louie's</h2>
+        <p>Art, prints, and handmade goods from our studio — named after the princess and her orange tabby.</p>
+        <a href="https://www.etsy.com/shop/Engine43ArtStore" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Visit the shop &rarr;</a>
+      </div>
+      <div class="cta-block">
+        <h2>Learn to screenprint.</h2>
+        <p>Carolin teaches hands-on screenprinting workshops right here in the firehouse studio. No experience needed — you'll leave with your own prints and the skills to make more.</p>
+        <a href="/classes" class="btn btn-outline">Book a class &rarr;</a>
       </div>
     </div>
   </section>
+
+  <!-- SIGN-OFF -->
+  <section class="section section-hero-bg text-center">
+    <div class="container signoff">
+      <h2>The door's open.</h2>
+      <p>We host markets, music, and community events throughout the year. Sometimes we even let people in for a look around.</p>
+      <p>Follow us or sign up above — we'd love to see you back.</p>
+      <p class="footer-links">
+        <a href="/cats">Meet Fat Louie's cousins &rarr;</a>
+        <span class="divider">·</span>
+        <a href="/project/listening-room">Interested in our listening room sessions? Learn more &rarr;</a>
+      </p>
+    </div>
+  </section>
+
 </TouristLayout>
 
 <style>
-  .quick-links {
-    padding: var(--spacing-xl) 0;
+  /* ── HERO ── */
+  .hero-tourist {
+    padding: var(--spacing-2xl) 0 calc(var(--spacing-2xl) * 1.5);
   }
 
-  .links-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-md);
-  }
-
-  .quick-link-card {
-    background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    padding: var(--spacing-lg) var(--spacing-md);
-    text-align: center;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-
-  .quick-link-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    text-decoration: none;
-  }
-
-  .quick-link-icon {
-    font-size: 2rem;
-    display: block;
-    margin-bottom: var(--spacing-sm);
-  }
-
-  .quick-link-card h3 {
-    margin: 0 0 var(--spacing-xs);
-    font-size: 1rem;
-  }
-
-  .quick-link-card p {
-    margin: 0;
-    font-size: 0.875rem;
-    color: var(--color-text-muted);
-  }
-
-  .upcoming {
-    text-align: center;
-  }
-
-  .upcoming h2 {
-    margin-bottom: var(--spacing-lg);
-  }
-
-  .upcoming-list {
-    max-width: 400px;
-    margin: 0 auto;
-  }
-
-  .upcoming-item {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-md);
-    background-color: var(--color-surface);
-    padding: var(--spacing-md);
-    border-radius: 8px;
-    margin-bottom: var(--spacing-sm);
-    text-align: left;
-  }
-
-  .upcoming-date {
-    background-color: var(--color-primary);
-    color: white;
-    padding: var(--spacing-sm);
-    border-radius: 4px;
-    text-align: center;
-    min-width: 50px;
-  }
-
-  .upcoming-date .day {
-    display: block;
-    font-size: 1.25rem;
-    font-weight: bold;
-    line-height: 1;
-  }
-
-  .upcoming-date .month {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-  }
-
-  .upcoming-info h4 {
-    margin: 0 0 var(--spacing-xs);
-    font-size: 1rem;
-    font-family: var(--font-serif);
-    font-weight: var(--description-weight);
-    font-style: var(--description-style);
-  }
-
-  .upcoming-info p {
-    margin: 0;
-    font-size: 0.875rem;
-    color: var(--color-text-muted);
-  }
-
-  .trivia-card {
-    text-align: center;
-  }
-
-  .trivia-card h3 {
-    margin-top: 0;
-    color: var(--color-primary);
-  }
-
-  .trivia-card p {
+  .hero-tourist h1 {
+    font-size: 2.5rem;
     margin-bottom: var(--spacing-md);
   }
 
-  @media (max-width: 480px) {
-    .links-grid {
+  .hero-address {
+    font-family: var(--font-ui);
+    font-size: 0.8125rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .hero-sub {
+    max-width: 520px;
+    margin: 0 auto;
+    opacity: 0.9;
+    font-size: 1.125rem;
+    font-family: var(--font-serif);
+    font-weight: var(--description-weight);
+  }
+
+  /* ── GALLERY ── */
+  .section-intro {
+    text-align: center;
+    color: var(--color-text-muted);
+    margin: 0 auto var(--spacing-xl);
+    font-size: 1.125rem;
+    max-width: 560px;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .gallery-item {
+    margin: 0;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+  }
+
+  .gallery-item img.align-top {
+    object-position: top;
+  }
+
+  .gallery-item figcaption {
+    padding: var(--spacing-sm) 0;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  .gallery-item figcaption strong {
+    display: block;
+    color: var(--color-text);
+    font-family: var(--font-display);
+    font-style: var(--heading-style);
+    font-weight: var(--heading-weight);
+    font-size: 1.05rem;
+    margin-bottom: 2px;
+  }
+
+  /* ── DOOR ── */
+  .door-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    align-items: center;
+  }
+
+  .door-image img {
+    width: 100%;
+    border-radius: 4px;
+    display: block;
+  }
+
+  .door-text h2 {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .door-text p {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .door-cta {
+    font-style: italic;
+    font-weight: 500;
+    margin-top: var(--spacing-lg) !important;
+  }
+
+  /* ── HOLY MOLY ── */
+  .holymoly-photo {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .holymoly-photo img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+  }
+
+  .photo-caption {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    font-family: var(--font-ui);
+    text-align: center;
+    margin-top: var(--spacing-sm);
+  }
+
+  .holymoly-body {
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .holymoly-date {
+    font-family: var(--font-ui);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  /* ── CTA PAIR ── */
+  .cta-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+  }
+
+  .cta-block h2 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .cta-block p {
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text-muted);
+  }
+
+  /* ── SIGN-OFF ── */
+  .signoff {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .signoff p {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .footer-links {
+    margin-top: var(--spacing-xl);
+    font-size: 0.875rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    align-items: center;
+  }
+
+  .footer-links a {
+    color: var(--color-text-muted);
+  }
+
+  .divider {
+    color: var(--color-text-muted);
+    opacity: 0.5;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 640px) {
+    .hero-tourist h1 {
+      font-size: 1.875rem;
+    }
+
+    .gallery-grid {
       grid-template-columns: 1fr;
     }
 
-    .quick-link-card {
-      display: flex;
-      align-items: center;
-      text-align: left;
-      gap: var(--spacing-md);
+    .gallery-item img {
+      height: 220px;
     }
 
-    .quick-link-icon {
-      font-size: 1.5rem;
-      margin-bottom: 0;
+    .door-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .door-image {
+      order: -1;
+    }
+
+    .cta-pair {
+      grid-template-columns: 1fr;
     }
   }
 </style>

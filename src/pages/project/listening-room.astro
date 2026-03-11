@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ButtondownSignup from '../../components/ButtondownSignup.astro';
+---
+
+<BaseLayout
+  title="Listening Room"
+  description="Intimate hi-fi listening sessions at Engine 43 in San Francisco's Excelsior District."
+  hideLinks={true}
+>
+  <section class="hero-small">
+    <div class="container">
+      <h1>The Listening Room</h1>
+      <p>Intimate hi-fi sessions at the firehouse.</p>
+    </div>
+  </section>
+
+  <section class="section section-hero-flipped">
+    <div class="container content">
+      <p>Some music deserves to be heard properly — on a good system, in a good room, with people who care about listening.</p>
+      <p>We host small, curated listening sessions at the firehouse. A carefully chosen record, a warm room, no distractions. Details and dates are shared with our listening room list first.</p>
+      <p>This isn't for everyone, and that's fine. If it sounds like your kind of thing, sign up below.</p>
+    </div>
+  </section>
+
+  <section class="section section-hero-bg">
+    <div class="container">
+      <ButtondownSignup
+        heading="Get listening room invites."
+        description="We'll reach out when the next session is scheduled. Small list, small room, no spam."
+        buttonText="Sign me up"
+        tag="listening-room"
+      />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .content {
+    max-width: 620px;
+  }
+
+  .content p {
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.125rem;
+  }
+</style>

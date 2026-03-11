@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Screenprinting Classes"
+  description="Hands-on screenprinting workshops at Engine 43 in San Francisco's Excelsior District."
+  hideLinks={true}
+>
+  <section class="hero-small">
+    <div class="container">
+      <h1>Screenprinting Classes</h1>
+      <p>Hands-on workshops in the firehouse studio.</p>
+    </div>
+  </section>
+
+  <section class="section section-hero-flipped">
+    <div class="container content">
+      <p>Carolin teaches hands-on screenprinting workshops right here in the firehouse studio. No experience needed — you'll leave with your own prints and the skills to make more.</p>
+      <p>Class dates and details are coming soon. In the meantime, send us an email to ask about availability, group sessions, or to get on the list for upcoming classes.</p>
+      <a href="mailto:screenprinting@engine43.org" class="btn">screenprinting@engine43.org</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .content {
+    max-width: 640px;
+  }
+
+  .content p {
+    margin-bottom: var(--spacing-lg);
+  }
+</style>

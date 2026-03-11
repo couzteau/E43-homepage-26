@@ -4,6 +4,7 @@ interface Props {
   description?: string;
   buttonText?: string;
   variant?: 'default' | 'compact';
+  tag?: string;
 }
 
 const {
@@ -11,6 +12,7 @@ const {
   description = 'Subscribe to our newsletter for upcoming events and news.',
   buttonText = 'Subscribe',
   variant = 'default',
+  tag,
 } = Astro.props;
 ---
 
@@ -37,6 +39,7 @@ const {
       />
       <button type="submit" class="btn">{buttonText}</button>
     </div>
+    {tag && <input type="hidden" name="tag" value={tag} />}
     <p class="signup-note">We respect your privacy. Unsubscribe anytime.</p>
   </form>
 </div>

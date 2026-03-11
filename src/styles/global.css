@@ -456,3 +456,19 @@ select:focus {
     padding: var(--spacing-xl) 0;
   }
 }
+
+/* Dark mode outline button override — match primary button style */
+@media (prefers-color-scheme: dark) {
+  .btn-secondary,
+  .btn-outline {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: 0.5px solid var(--color-border-hover);
+  }
+
+  .btn-secondary:hover,
+  .btn-outline:hover {
+    background-color: var(--btn-hover-bg);
+    color: var(--btn-bg);
+  }
+}
