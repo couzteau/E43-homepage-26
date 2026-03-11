@@ -7,9 +7,10 @@ interface Props {
   title: string;
   description?: string;
   hideLinks?: boolean;
+  hideNav?: boolean;
 }
 
-const { title, description = 'Engine 43 - A historic firehouse venue in the heart of the community', hideLinks = false } = Astro.props;
+const { title, description = 'Engine 43 - A historic firehouse venue in the heart of the community', hideLinks = false, hideNav = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -23,7 +24,7 @@ const { title, description = 'Engine 43 - A historic firehouse venue in the hear
     <title>{title} | Engine 43</title>
   </head>
   <body>
-    <Header />
+    <Header hideNav={hideNav} />
     <main>
       <slot />
     </main>

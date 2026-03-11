@@ -1,4 +1,8 @@
 ---
+interface Props {
+  hideNav?: boolean;
+}
+const { hideNav = false } = Astro.props;
 const currentPath = Astro.url.pathname;
 
 const navLinks = [
@@ -19,23 +23,25 @@ const navLinks = [
         <img src="/images/logo-engine_43.svg" alt="Engine 43" class="logo-text" />
       </a>
     </div>
-    <nav class="nav">
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="hamburger"></span>
-      </button>
-      <ul class="nav-list">
-        {navLinks.map(link => (
-          <li>
-            <a
-              href={link.href}
-              class:list={['nav-link', { active: currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href)) }]}
-            >
-              {link.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    {!hideNav && (
+      <nav class="nav">
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-list">
+          {navLinks.map(link => (
+            <li>
+              <a
+                href={link.href}
+                class:list={['nav-link', { active: currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href)) }]}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )}
   </div>
 </header>
 
