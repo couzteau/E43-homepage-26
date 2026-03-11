@@ -1,7 +1,14 @@
 {
   "permissions": {
     "allow": [
-      "Bash(du:*)"
+      "Bash(du:*)",
+      "Bash(node:*)",
+      "Bash(npm install:*)",
+      "Bash(source:*)",
+      "Bash(/Users/jhagenst/.nvm/versions/node/v16.20.0/bin/node:*)",
+      "Bash(nvs use:*)",
+      "Bash(nvs link:*)",
+      "Bash(mv:*)"
     ]
   }
 }

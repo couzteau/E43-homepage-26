@@ -1,6 +1,13 @@
 ---
 import TouristLayout from '../layouts/TouristLayout.astro';
 import ButtondownSignup from '../components/ButtondownSignup.astro';
+import { Image } from 'astro:assets';
+import pole1 from '../assets/tourist/pole1.jpg';
+import spiralStaircase from '../assets/tourist/SpiralStaircase.jpg';
+import tower from '../assets/tourist/Tower.jpg';
+import artSpan from '../assets/tourist/ArtSpan.jpg';
+import door from '../assets/tourist/Door.jpg';
+import holymoly from '../assets/tourist/holymoly.jpeg';
 ---
 
 <TouristLayout
@@ -24,28 +31,28 @@ import ButtondownSignup from '../components/ButtondownSignup.astro';
       <p class="section-intro">Most visitors only see the outside. Here's what's behind the big red doors.</p>
       <div class="gallery-grid">
         <figure class="gallery-item">
-          <img src="/images/tourist/pole1.jpg" alt="The fire pole at Engine 43" />
+          <Image src={pole1} alt="The fire pole at Engine 43" widths={[400, 800]} sizes="(max-width: 640px) 100vw, 50vw" loading="eager" />
           <figcaption>
             <strong>The Pole</strong>
             Yes, it's real. Yes, it still works. It runs from the third floor all the way down to the garage — just like in the movie.
           </figcaption>
         </figure>
         <figure class="gallery-item">
-          <img src="/images/tourist/SpiralStaircase.jpg" alt="The original cast iron spiral staircase" />
+          <Image src={spiralStaircase} alt="The original cast iron spiral staircase" widths={[400, 800]} sizes="(max-width: 640px) 100vw, 50vw" loading="lazy" />
           <figcaption>
             <strong>The Spiral Staircase</strong>
             The original cast iron staircase the firefighters used. Mia walked these same steps.
           </figcaption>
         </figure>
         <figure class="gallery-item">
-          <img src="/images/tourist/Tower.jpg" alt="The Princess Tower — now an art studio" class="align-top" />
+          <Image src={tower} alt="The Princess Tower — now an art studio" widths={[400, 800]} sizes="(max-width: 640px) 100vw, 50vw" loading="lazy" class="align-top" />
           <figcaption>
             <strong>The Princess Tower</strong>
             The hose-drying tower is now an art studio. On a clear day you can see downtown, the bay, and the hills of the Excelsior.
           </figcaption>
         </figure>
         <figure class="gallery-item">
-          <img src="/images/tourist/ArtSpan.jpg" alt="The firehouse garage" />
+          <Image src={artSpan} alt="The firehouse garage" widths={[400, 800]} sizes="(max-width: 640px) 100vw, 50vw" loading="lazy" />
           <figcaption>
             <strong>The Garage</strong>
             Where Engine No. 43 once parked. Now it hosts art markets, music, and community gatherings.
@@ -60,7 +67,7 @@ import ButtondownSignup from '../components/ButtondownSignup.astro';
     <div class="container">
       <div class="door-layout">
         <div class="door-image">
-          <img src="/images/tourist/Door.jpg" alt="Resist Much Obey Little — Princess Mia and Princess Leia door mural" />
+          <Image src={door} alt="Resist Much Obey Little — Princess Mia and Princess Leia door mural" widths={[400, 800]} sizes="(max-width: 640px) 100vw, 50vw" loading="lazy" />
         </div>
         <div class="door-text">
           <h2>Princesses can be rebels.</h2>
@@ -77,7 +84,7 @@ import ButtondownSignup from '../components/ButtondownSignup.astro';
     <div class="container">
       <h2 class="section-title">Come back in December.</h2>
       <div class="holymoly-photo">
-        <img src="/images/tourist/holymoly.jpeg" alt="Holy Moly Christmas Market 2025 — view from above" />
+        <Image src={holymoly} alt="Holy Moly Christmas Market 2025 — view from above" widths={[400, 800, 1200]} sizes="(max-width: 640px) 100vw, 90vw" loading="lazy" />
         <p class="photo-caption">Holy Moly Christmas Market 2025 — view from above.</p>
       </div>
       <p class="holymoly-body">Every year we transform the firehouse into San Francisco's most unexpected holiday market. Local artists, handmade goods, live music, and neighbors spilling out onto Brazil Ave.</p>

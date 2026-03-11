@@ -1,5 +1,24 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import mia from '../assets/tourist/cats/Mia.jpg';
+import miaSun from '../assets/tourist/cats/mia-sun.jpg';
+import mia2 from '../assets/tourist/cats/2-mia.jpg';
+import emerald from '../assets/tourist/cats/Emerald.jpg';
+import emerald2 from '../assets/tourist/cats/2-emerald.jpg';
+import emerald3 from '../assets/tourist/cats/Emerald2.jpg';
+import zaphire1 from '../assets/tourist/cats/1-Zaphire.jpg';
+import zaphire2 from '../assets/tourist/cats/2-zaphire.jpg';
+import zaphire3 from '../assets/tourist/cats/3-Zaphire.jpg';
+import majorTom from '../assets/tourist/cats/Major-Tom.jpg';
+import tom1 from '../assets/tourist/cats/1-tom.jpg';
+import tom3 from '../assets/tourist/cats/3-tom.jpg';
+import emeraldZaphire from '../assets/tourist/cats/Emerald+Zaphire.jpg';
+import emeraldZaphire1 from '../assets/tourist/cats/1-emerald+Zaphire.jpg';
+import emeraldZaphire2 from '../assets/tourist/cats/Emerald+Zaphire2.jpg';
+import miaAndTom from '../assets/tourist/cats/Mia+Tom.jpg';
+
+const catSizes = '(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw';
 ---
 
 <BaseLayout
@@ -21,46 +40,46 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h2 class="cat-name">Mia</h2>
       <p class="cat-bio">Named after the princess herself. She knows it.</p>
       <div class="cats-grid">
-        <div class="cat-card"><img src="/images/tourist/cats/Mia.jpg" alt="Mia" /></div>
-        <div class="cat-card"><img src="/images/tourist/cats/mia-sun.jpg" alt="Mia" /></div>
-        <div class="cat-card"><img src="/images/tourist/cats/2-mia.jpg" alt="Mia" /></div>
+        <div class="cat-card"><Image src={mia} alt="Mia" widths={[400, 800]} sizes={catSizes} loading="lazy" /></div>
+        <div class="cat-card"><Image src={miaSun} alt="Mia" widths={[400, 800]} sizes={catSizes} loading="lazy" /></div>
+        <div class="cat-card"><Image src={mia2} alt="Mia" widths={[400, 800]} sizes={catSizes} loading="lazy" /></div>
       </div>
 
       <!-- EMERALD -->
       <h2 class="cat-name">Emerald</h2>
       <p class="cat-bio">Green eyes, strong opinions, co-owner of the studio.</p>
       <div class="cats-grid">
-        <div class="cat-card"><img src="/images/tourist/cats/Emerald.jpg" alt="Emerald" /></div>
-        <div class="cat-card"><img src="/images/tourist/cats/2-emerald.jpg" alt="Emerald" /></div>
-        <div class="cat-card"><img src="/images/tourist/cats/Emerald2.jpg" alt="Emerald" /></div>
+        <div class="cat-card"><Image src={emerald} alt="Emerald" widths={[400, 800]} sizes={catSizes} loading="lazy" /></div>
+        <div class="cat-card"><Image src={emerald2} alt="Emerald" widths={[400, 800]} sizes={catSizes} loading="lazy" /></div>
+        <div class="cat-card"><Image src={emerald3} alt="Emerald" widths={[400, 800]} sizes={catSizes} loading="lazy" /></div>
       </div>
 
       <!-- ZAPHIRE -->
       <h2 class="cat-name">Zaphire</h2>
       <p class="cat-bio">A true San Franciscan.</p>
       <div class="cats-grid">
-        <div class="cat-card"><img src="/images/tourist/cats/1%20Zaphire.jpg" alt="Zaphire" /></div>
-        <div class="cat-card"><img src="/images/tourist/cats/2%20zaphire.jpg" alt="Zaphire" /></div>
-        <div class="cat-card"><img src="/images/tourist/cats/3%20Zaphire.jpg" alt="Zaphire" /></div>
+        <div class="cat-card"><Image src={zaphire1} alt="Zaphire" widths={[400, 800]} sizes={catSizes} loading="lazy" /></div>
+        <div class="cat-card"><Image src={zaphire2} alt="Zaphire" widths={[400, 800]} sizes={catSizes} loading="lazy" /></div>
+        <div class="cat-card"><Image src={zaphire3} alt="Zaphire" widths={[400, 800]} sizes={catSizes} loading="lazy" /></div>
       </div>
 
       <!-- MAJOR TOM -->
       <h2 class="cat-name">Major Tom</h2>
       <p class="cat-bio">Floating in a most peculiar way — usually on the best chair in the house.</p>
       <div class="cats-grid">
-        <div class="cat-card"><img src="/images/tourist/cats/Major%20Tom.jpg" alt="Major Tom" style="object-position: top;" /></div>
-        <div class="cat-card"><img src="/images/tourist/cats/1-tom.jpg" alt="Major Tom" /></div>
-        <div class="cat-card"><img src="/images/tourist/cats/3-tom.jpg" alt="Major Tom" /></div>
+        <div class="cat-card"><Image src={majorTom} alt="Major Tom" widths={[400, 800]} sizes={catSizes} loading="lazy" class="align-top" /></div>
+        <div class="cat-card"><Image src={tom1} alt="Major Tom" widths={[400, 800]} sizes={catSizes} loading="lazy" /></div>
+        <div class="cat-card"><Image src={tom3} alt="Major Tom" widths={[400, 800]} sizes={catSizes} loading="lazy" /></div>
       </div>
 
       <!-- TOGETHER -->
       <h2 class="cat-name">Together</h2>
       <p class="cat-bio">Inseparable. Unless there's only one sunny spot.</p>
       <div class="cats-grid">
-        <div class="cat-card"><img src="/images/tourist/cats/Emerald+Zaphire.jpg" alt="Emerald and Zaphire" /></div>
-        <div class="cat-card"><img src="/images/tourist/cats/1-%20emerald+Zaphire.jpg" alt="Emerald and Zaphire" /></div>
-        <div class="cat-card"><img src="/images/tourist/cats/Emerald+Zaphire2.jpg" alt="Emerald and Zaphire" /></div>
-        <div class="cat-card"><img src="/images/tourist/cats/Mia+Tom.jpg" alt="Mia and Major Tom" /></div>
+        <div class="cat-card"><Image src={emeraldZaphire} alt="Emerald and Zaphire" widths={[400, 800]} sizes={catSizes} loading="lazy" /></div>
+        <div class="cat-card"><Image src={emeraldZaphire1} alt="Emerald and Zaphire" widths={[400, 800]} sizes={catSizes} loading="lazy" /></div>
+        <div class="cat-card"><Image src={emeraldZaphire2} alt="Emerald and Zaphire" widths={[400, 800]} sizes={catSizes} loading="lazy" /></div>
+        <div class="cat-card"><Image src={miaAndTom} alt="Mia and Major Tom" widths={[400, 800]} sizes={catSizes} loading="lazy" /></div>
       </div>
 
       <p class="back-link"><a href="/tourist">&larr; Back to the firehouse</a></p>
@@ -99,6 +118,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     object-fit: cover;
     border-radius: 4px;
     display: block;
+  }
+
+  .cat-card img.align-top {
+    object-position: top;
   }
 
   .back-link {
