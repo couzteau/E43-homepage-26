@@ -24,7 +24,6 @@ The Etsy store / retail brand for art and crafts. Name references *The Princess 
 - **Content:** Markdown with frontmatter
 - **Hosting:** Cloudflare Pages or Netlify
 - **Forms:** Native platform forms or third-party embed (Buttondown, Mailchimp)
-- **Design Style:** Bohemian / artistic - organic typography, muted earthy tones, handcrafted feel
 
 ---
 
@@ -44,7 +43,6 @@ The Etsy store / retail brand for art and crafts. Name references *The Princess 
 | Art & Screenprint | Project page for painting/screenprinting |
 | Listening Room | Project page for the listening room / hi-fi sessions |
 | Music & Mixes | DJ mixes and music productions by Jochen |
-| Screenprinting Classes | Workshop info, upcoming class dates, booking |
 | Chez Mia & Fat Louie | Etsy store info/link |
 
 ### Entry Points
@@ -98,7 +96,7 @@ Transition from resistance message to what we're building:
 **Primary: Newsletter Signup**
 > "Want to know when Holy Moly tickets drop? Or catch our next art market? Sign up for event updates."
 
-**Secondary: Chez Mia & Fat Louie's (Etsy)**
+**Secondary: Mia & Fat Louie's (Etsy)**
 - Brief explanation of the name (yes, *that* Mia and her cat)
 - Link to Etsy store
 
@@ -129,7 +127,7 @@ Warm invitation to return:
   pages/
     history.md
     visit.md
-    chez-mia-fat-louie.md
+    mia-and-fat-louie.md
 ```
 
 ### Event Frontmatter
@@ -191,11 +189,10 @@ Our flagship annual event, held every December. Key details:
 |---------|-------|-------------|
 | Massage | Carolin | Massage therapy practice |
 | Art & Screenprint | Carolin | Painting and screenprinting |
-| Screenprinting Classes | Carolin | Hands-on workshops, beginner-friendly |
 | Jewelry | Roommate | Handmade jewelry |
 | Listening Room | Jochen | Hi-fi listening sessions, curated music experiences |
 | Music & Mixes | Jochen | DJ mixes, productions, links to external platforms (Mixcloud, SoundCloud, etc.) |
-| Chez Mia & Fat Louie (Etsy) | Collective | Art, crafts, prints — links to Etsy store |
+| Mia & Fat Louie (Etsy) | Collective | Art, crafts, prints — links to Etsy store |
 
 ---
 
