@@ -12,7 +12,7 @@
   --color-border-hover: var(--color-secondary);  /* Hover border */
 
   /* Theme-specific: hero section - sunrise: blue top, sand bottom */
-  --hero-bg-image: url('/images/daysky/AdobeStock_293386615.jpeg');
+  --hero-bg-image: url('/images/daysky/AdobeStock_293386615-768.webp');
   --hero-gradient: linear-gradient(to bottom, rgba(169, 186, 204, 0.85) 0%, rgba(216, 195, 180, 0.85) 100%);
   --hero-small-gradient: linear-gradient(to bottom, #A9BACC 0%, #D8C3B4 100%);
 
@@ -69,6 +69,12 @@
   --spacing-2xl: 3rem;
 }
 
+@media (min-width: 769px) {
+  :root {
+    --hero-bg-image: url('/images/daysky/AdobeStock_293386615-1920.webp');
+  }
+}
+
 /* Dark theme - from night sky image */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -84,7 +90,7 @@
     --color-border-hover: #6B6B6B;    /* Lighter hover border */
 
     /* Theme-specific: hero section - dark sky at top, warm horizon at bottom */
-    --hero-bg-image: url('/images/nightsky/AdobeStock_551857355-1920.webp');
+    --hero-bg-image: url('/images/nightsky/AdobeStock_551857355-768.webp');
     --hero-gradient: linear-gradient(to bottom, rgba(26, 26, 46, 0.8) 0%, rgba(70, 50, 45, 0.75) 100%);
     --hero-small-gradient: linear-gradient(to bottom, #1A1A2E 0%, #46322D 100%);
 
@@ -115,6 +121,12 @@
 
     /* Theme-specific: links */
     --link-color: var(--color-secondary);
+  }
+
+  @media (min-width: 769px) {
+    [data-theme="dark"] {
+      --hero-bg-image: url('/images/nightsky/AdobeStock_551857355-1920.webp');
+    }
   }
 }
 
