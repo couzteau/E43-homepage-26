@@ -8,7 +8,12 @@
       "Bash(/Users/jhagenst/.nvm/versions/node/v16.20.0/bin/node:*)",
       "Bash(nvs use:*)",
       "Bash(nvs link:*)",
-      "Bash(mv:*)"
+      "Bash(mv:*)",
+      "Bash(identify /Users/jhagenst/sourcecode/github/E43-home/E43-homepage-26/public/images/nightsky/AdobeStock_551857355.jpeg 2>/dev/null || sips -g pixelWidth -g pixelHeight /Users/jhagenst/sourcecode/github/E43-home/E43-homepage-26/public/images/nightsky/AdobeStock_551857355.jpeg)",
+      "Bash(sips -s format webp -Z 1920 /Users/jhagenst/sourcecode/github/E43-home/E43-homepage-26/public/images/nightsky/AdobeStock_551857355.jpeg --out /Users/jhagenst/sourcecode/github/E43-home/E43-homepage-26/public/images/nightsky/AdobeStock_551857355.webp && ls -lh /Users/jhagenst/sourcecode/github/E43-home/E43-homepage-26/public/images/nightsky/)",
+      "Bash(convert /Users/jhagenst/sourcecode/github/E43-home/E43-homepage-26/public/images/nightsky/AdobeStock_551857355.jpeg -resize 1920x -quality 82 /Users/jhagenst/sourcecode/github/E43-home/E43-homepage-26/public/images/nightsky/AdobeStock_551857355-1920.webp && ls -lh /Users/jhagenst/sourcecode/github/E43-home/E43-homepage-26/public/images/nightsky/)",
+      "Bash(which magick:*)",
+      "Bash(magick /Users/jhagenst/sourcecode/github/E43-home/E43-homepage-26/public/images/nightsky/AdobeStock_551857355.jpeg -resize 1920x -quality 82 /Users/jhagenst/sourcecode/github/E43-home/E43-homepage-26/public/images/nightsky/AdobeStock_551857355-1920.webp 2>&1)"
     ]
   }
 }
