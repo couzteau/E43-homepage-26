@@ -1,4 +1,8 @@
 ---
+if (Astro.request.headers.get('host') === 'mia.engine43.org') {
+  return Astro.redirect('/mia');
+}
+
 import BaseLayout from '../layouts/BaseLayout.astro';
 import EventCard from '../components/EventCard.astro';
 import ProjectCard from '../components/ProjectCard.astro';
