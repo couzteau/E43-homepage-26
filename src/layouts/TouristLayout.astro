@@ -9,6 +9,7 @@ interface Props {
 }
 
 const { title, description = 'Welcome to Engine 43 - A historic firehouse venue' } = Astro.props;
+const showSiteNav = false;
 ---
 
 <!doctype html>
@@ -22,11 +23,11 @@ const { title, description = 'Welcome to Engine 43 - A historic firehouse venue'
     <title>{title} | Engine 43</title>
   </head>
   <body>
-    <Header hideNav={true} />
+    <Header showSiteNav={showSiteNav} />
     <main>
       <slot />
     </main>
-    <Footer hideLinks={true} />
+    <Footer showSiteNav={showSiteNav} />
   </body>
 </html>
 

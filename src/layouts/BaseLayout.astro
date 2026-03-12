@@ -6,11 +6,10 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
-  hideLinks?: boolean;
-  hideNav?: boolean;
+  showSiteNav?: boolean;
 }
 
-const { title, description = 'Engine 43 - A historic firehouse venue in the heart of the community', hideLinks = false, hideNav = false } = Astro.props;
+const { title, description = 'Engine 43 - A historic firehouse venue in the heart of the community', showSiteNav = true } = Astro.props;
 ---
 
 <!doctype html>
@@ -24,11 +23,11 @@ const { title, description = 'Engine 43 - A historic firehouse venue in the hear
     <title>{title} | Engine 43</title>
   </head>
   <body>
-    <Header hideNav={hideNav} />
+    <Header showSiteNav={showSiteNav} />
     <main>
       <slot />
     </main>
-    <Footer hideLinks={hideLinks} />
+    <Footer showSiteNav={showSiteNav} />
   </body>
 </html>
 

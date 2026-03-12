@@ -1,8 +1,8 @@
 ---
 interface Props {
-  hideLinks?: boolean;
+  showSiteNav?: boolean;
 }
-const { hideLinks = false } = Astro.props;
+const { showSiteNav = true } = Astro.props;
 const currentYear = new Date().getFullYear();
 ---
 
@@ -13,7 +13,7 @@ const currentYear = new Date().getFullYear();
         <h3>Engine 43</h3>
         <p>A historic firehouse turned vibrant community venue.</p>
       </div>
-      {!hideLinks && (
+      {showSiteNav && (
         <div class="footer-section">
           <h4>Quick Links</h4>
           <ul>

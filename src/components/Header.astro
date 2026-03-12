@@ -1,8 +1,8 @@
 ---
 interface Props {
-  hideNav?: boolean;
+  showSiteNav?: boolean;
 }
-const { hideNav = false } = Astro.props;
+const { showSiteNav = true } = Astro.props;
 const currentPath = Astro.url.pathname;
 
 const navLinks = [
@@ -23,7 +23,7 @@ const navLinks = [
         <img src="/images/logo-engine_43.svg" alt="Engine 43" class="logo-text" />
       </a>
     </div>
-    {!hideNav && (
+    {showSiteNav && (
       <nav class="nav">
         <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
           <span class="hamburger"></span>
