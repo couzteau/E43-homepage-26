@@ -14,7 +14,6 @@ import majorTom from '../assets/tourist/cats/Major-Tom.jpg';
 import tom1 from '../assets/tourist/cats/1-tom.jpg';
 import tom3 from '../assets/tourist/cats/3-tom.jpg';
 import emeraldZaphire from '../assets/tourist/cats/Emerald+Zaphire.jpg';
-import emeraldZaphire1 from '../assets/tourist/cats/1-emerald+Zaphire.jpg';
 import emeraldZaphire2 from '../assets/tourist/cats/Emerald+Zaphire2.jpg';
 import miaAndTom from '../assets/tourist/cats/Mia+Tom.jpg';
 
@@ -41,7 +40,7 @@ const catSizes = '(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw';
       <h2 class="cat-name">Mia</h2>
       <p class="cat-bio">Named after the princess herself. She knows it.</p>
       <div class="cats-grid">
-        <div class="cat-card"><Image src={mia} alt="Mia" widths={[400, 800]} sizes={catSizes} loading="lazy" /></div>
+        <div class="cat-card"><Image src={mia} alt="Mia" widths={[400, 800]} sizes={catSizes} loading="lazy" class="align-top" /></div>
         <div class="cat-card"><Image src={miaSun} alt="Mia" widths={[400, 800]} sizes={catSizes} loading="lazy" /></div>
         <div class="cat-card"><Image src={mia2} alt="Mia" widths={[400, 800]} sizes={catSizes} loading="lazy" /></div>
       </div>
@@ -78,8 +77,7 @@ const catSizes = '(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw';
       <p class="cat-bio">Inseparable. Unless there's only one sunny spot.</p>
       <div class="cats-grid">
         <div class="cat-card"><Image src={emeraldZaphire} alt="Emerald and Zaphire" widths={[400, 800]} sizes={catSizes} loading="lazy" /></div>
-        <div class="cat-card"><Image src={emeraldZaphire1} alt="Emerald and Zaphire" widths={[400, 800]} sizes={catSizes} loading="lazy" /></div>
-        <div class="cat-card"><Image src={emeraldZaphire2} alt="Emerald and Zaphire" widths={[400, 800]} sizes={catSizes} loading="lazy" /></div>
+<div class="cat-card"><Image src={emeraldZaphire2} alt="Emerald and Zaphire" widths={[400, 800]} sizes={catSizes} loading="lazy" /></div>
         <div class="cat-card"><Image src={miaAndTom} alt="Mia and Major Tom" widths={[400, 800]} sizes={catSizes} loading="lazy" /></div>
       </div>
 
@@ -111,6 +109,10 @@ const catSizes = '(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw';
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-md);
+  }
+
+  .cat-card {
+    min-width: 0;
   }
 
   .cat-card img {
