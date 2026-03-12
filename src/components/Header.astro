@@ -16,12 +16,24 @@ const navLinks = [
 <header class="site-header">
   <div class="container header-content">
     <div class="header-brand">
-      <a href="/" class="header-logo">
-        <img src="/images/E43-Mia-Logo-final.png" alt="Engine 43" class="header-logo-img" />
-      </a>
-      <a href="/" class="logo">
-        <img src="/images/logo-engine_43.svg" alt="Engine 43" class="logo-text" />
-      </a>
+      {showSiteNav ? (
+        <a href="/" class="header-logo">
+          <img src="/images/E43-Mia-Logo-final.png" alt="Engine 43" class="header-logo-img" />
+        </a>
+      ) : (
+        <span class="header-logo">
+          <img src="/images/E43-Mia-Logo-final.png" alt="Engine 43" class="header-logo-img" />
+        </span>
+      )}
+      {showSiteNav ? (
+        <a href="/" class="logo">
+          <img src="/images/logo-engine_43.svg" alt="Engine 43" class="logo-text" />
+        </a>
+      ) : (
+        <span class="logo">
+          <img src="/images/logo-engine_43.svg" alt="Engine 43" class="logo-text" />
+        </span>
+      )}
     </div>
     {showSiteNav && (
       <nav class="nav">
