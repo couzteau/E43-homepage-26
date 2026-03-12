@@ -1,0 +1,2 @@
+https://mia.engine43.org/ /mia/ 200
+https://mia.engine43.org/* /mia/:splat 200
