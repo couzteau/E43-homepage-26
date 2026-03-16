@@ -2,6 +2,7 @@
 import TouristLayout from '../layouts/TouristLayout.astro';
 import ButtondownSignup from '../components/ButtondownSignup.astro';
 import { Image } from 'astro:assets';
+import Lightbox from '../components/Lightbox.astro';
 import pole1 from '../assets/tourist/pole1.jpg';
 import spiralStaircase from '../assets/tourist/SpiralStaircase.jpg';
 import tower from '../assets/tourist/Tower.jpg';
@@ -30,28 +31,28 @@ import holymoly from '../assets/tourist/holymoly.jpeg';
       <h2 class="section-title">Inside the Firehouse</h2>
       <p class="section-intro">Here's what's behind the big red doors.</p>
       <div class="gallery-grid">
-        <figure class="gallery-item">
+        <figure class="gallery-item" data-lightbox>
           <Image src={artSpan} alt="The firehouse garage" widths={[400, 800]} sizes="(max-width: 640px) 100vw, 50vw" loading="eager" />
           <figcaption>
             <strong>The Garage</strong>
             Where Engine No. 43 once parked. Now it hosts art markets, music, and community gatherings.
           </figcaption>
         </figure>
-        <figure class="gallery-item">
+        <figure class="gallery-item" data-lightbox>
           <Image src={spiralStaircase} alt="The original cast iron spiral staircase" widths={[400, 800]} sizes="(max-width: 640px) 100vw, 50vw" loading="lazy" />
           <figcaption>
             <strong>The Spiral Staircase</strong>
             The original cast iron staircase the firefighters used. Mia walked these same steps.
           </figcaption>
         </figure>
-        <figure class="gallery-item">
+        <figure class="gallery-item" data-lightbox>
           <Image src={pole1} alt="The fire pole at Engine 43" widths={[400, 800]} sizes="(max-width: 640px) 100vw, 50vw" loading="lazy" />
           <figcaption>
             <strong>The Pole</strong>
             Yes, it's real. Yes, it still works. It runs from the third floor all the way down to the garage — just like in the movie.
           </figcaption>
         </figure>
-        <figure class="gallery-item">
+        <figure class="gallery-item" data-lightbox>
           <Image src={tower} alt="The Princess Tower — now an art studio" widths={[400, 800]} sizes="(max-width: 640px) 100vw, 50vw" loading="lazy" class="align-top" />
           <figcaption>
             <strong>The Princess Tower</strong>
@@ -66,7 +67,7 @@ import holymoly from '../assets/tourist/holymoly.jpeg';
   <section class="section section-hero-bg">
     <div class="container">
       <div class="door-layout">
-        <div class="door-image">
+        <div class="door-image" data-lightbox>
           <Image src={door} alt="Resist Much Obey Little — Princess Mia and Princess Leia door mural" widths={[400, 800]} sizes="(max-width: 640px) 100vw, 50vw" loading="lazy" />
         </div>
         <div class="door-text">
@@ -83,7 +84,7 @@ import holymoly from '../assets/tourist/holymoly.jpeg';
   <section class="section section-hero-flipped text-center">
     <div class="container">
       <h2 class="section-title">Come back in December.</h2>
-      <div class="holymoly-photo">
+      <div class="holymoly-photo" data-lightbox>
         <Image src={holymoly} alt="Holy Moly Christmas Market 2025 — view from above" widths={[400, 800, 1200]} sizes="(max-width: 640px) 100vw, 90vw" loading="lazy" />
         <p class="photo-caption">Holy Moly Christmas Market 2025 — view from above.</p>
       </div>
@@ -135,6 +136,7 @@ import holymoly from '../assets/tourist/holymoly.jpeg';
     </div>
   </section>
 
+  <Lightbox />
 </TouristLayout>
 
 <style>
@@ -183,6 +185,7 @@ import holymoly from '../assets/tourist/holymoly.jpeg';
 
   .gallery-item {
     margin: 0;
+    cursor: pointer;
   }
 
   .gallery-item img {
@@ -191,6 +194,11 @@ import holymoly from '../assets/tourist/holymoly.jpeg';
     object-fit: cover;
     border-radius: 4px;
     display: block;
+    transition: opacity 0.15s ease;
+  }
+
+  .gallery-item:hover img {
+    opacity: 0.85;
   }
 
   .gallery-item img.align-top {
@@ -222,6 +230,10 @@ import holymoly from '../assets/tourist/holymoly.jpeg';
     align-items: center;
   }
 
+  .door-image {
+    cursor: pointer;
+  }
+
   .door-image img {
     width: 100%;
     border-radius: 4px;
@@ -245,6 +257,7 @@ import holymoly from '../assets/tourist/holymoly.jpeg';
   /* ── HOLY MOLY ── */
   .holymoly-photo {
     margin-bottom: var(--spacing-xl);
+    cursor: pointer;
   }
 
   .holymoly-photo img {
