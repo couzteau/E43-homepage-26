@@ -16,7 +16,8 @@
       "Bash(magick /Users/jhagenst/sourcecode/github/E43-home/E43-homepage-26/public/images/nightsky/AdobeStock_551857355.jpeg -resize 1920x -quality 82 /Users/jhagenst/sourcecode/github/E43-home/E43-homepage-26/public/images/nightsky/AdobeStock_551857355-1920.webp 2>&1)",
       "Bash(sips -g pixelWidth -g pixelHeight /Users/jhagenst/sourcecode/github/E43-home/E43-homepage-26/public/images/E43-Mia-Logo-final.png)",
       "Bash(node -e \"\nconst sharp = require\\('./node_modules/sharp'\\);\nsharp\\('./public/images/E43-Mia-Logo-final.png'\\)\n  .resize\\(null, 200\\)\n  .webp\\({ quality: 90 }\\)\n  .toFile\\('./public/images/E43-Mia-Logo-final.webp'\\)\n  .then\\(info => console.log\\('Done:', info\\)\\)\n  .catch\\(err => console.error\\(err\\)\\);\n\" && ls -lh /Users/jhagenst/sourcecode/github/E43-home/E43-homepage-26/public/images/E43-Mia-Logo-final.*)",
-      "Bash(sips -g pixelWidth -g pixelHeight /Users/jhagenst/sourcecode/github/E43-home/E43-homepage-26/public/images/daysky/AdobeStock_293386615.jpeg)"
+      "Bash(sips -g pixelWidth -g pixelHeight /Users/jhagenst/sourcecode/github/E43-home/E43-homepage-26/public/images/daysky/AdobeStock_293386615.jpeg)",
+      "Bash(grep -r \"lightbox\\\\|modal\\\\|zoom\\\\|Image\\\\|<img\" /Users/jhagenst/sourcecode/github/E43-home/E43-homepage-26/src --include=\"*.astro\" --include=\"*.ts\" --include=\"*.tsx\" 2>/dev/null | head -50)"
     ]
   }
 }
