@@ -4,6 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import EventCard from '../components/EventCard.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import ButtondownSignup from '../components/ButtondownSignup.astro';
+import Lightbox from '../components/Lightbox.astro';
 import { getCollection } from 'astro:content';
 
 const allEvents = await getCollection('events');
@@ -45,11 +46,13 @@ const projects = [
           <a href="/history" class="btn btn-outline">Our History</a>
         </div>
       </div>
-      <div class="hero-image">
+      <div class="hero-image" data-lightbox data-lightbox-bg>
         <img src="/images/engine_no.43.png" alt="Engine 43 Firehouse illustration" />
       </div>
     </div>
   </section>
+
+  <Lightbox />
 
   <section class="section section-hero-flipped">
     <div class="container">
@@ -153,6 +156,7 @@ const projects = [
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    cursor: pointer;
   }
 
   .hero-image img {
