@@ -17,11 +17,35 @@ import holymoly from '../assets/tourist/holymoly.jpeg';
 >
 
   <!-- HERO -->
-  <section class="hero-small hero-tourist">
-    <div class="container">
-      <h1>You found the<br />Princess Diaries firehouse.</h1>
-      <p class="hero-address">724 Brazil Ave · San Francisco's Excelsior District</p>
-      <p class="hero-sub">A working firehouse since 1912. Mia Thermopolis's home since 2001. A residence and community art space today.</p>
+  <section class="hero-proclamation">
+    <div class="hero-proclamation-inner">
+
+      <div class="proclamation-ornament proclamation-ornament-top" aria-hidden="true">
+        <span class="orn-line"></span>
+        <span class="orn-glyph">✦</span>
+        <span class="orn-line"></span>
+      </div>
+
+      <img
+        src="/images/E43-Mia-Logo-final.png"
+        alt="Engine No. 43 — Mia Thermopolis medallion seal"
+        class="proclamation-medallion"
+        width="260"
+        height="260"
+      />
+
+      <h1 class="proclamation-headline">You found the<br />Princess Diaries firehouse.</h1>
+
+      <p class="proclamation-address">724 Brazil Ave · San Francisco's Excelsior District</p>
+
+      <p class="proclamation-sub">A working firehouse since 1912. Mia Thermopolis's home since 2001. A residence and community art space today.</p>
+
+      <div class="proclamation-ornament proclamation-ornament-bottom" aria-hidden="true">
+        <span class="orn-line"></span>
+        <span class="orn-glyph">✦</span>
+        <span class="orn-line"></span>
+      </div>
+
     </div>
   </section>
 
@@ -60,6 +84,7 @@ import holymoly from '../assets/tourist/holymoly.jpeg';
           </figcaption>
         </figure>
       </div>
+      <p class="gallery-cats-link"><a href="/cats">Meet Fat Louie's cousins &rarr;</a></p>
     </div>
   </section>
 
@@ -129,8 +154,6 @@ import holymoly from '../assets/tourist/holymoly.jpeg';
       <p>We host markets, music, and community events throughout the year.</p>
       <p>Follow us or sign up above — we'd love to see you back.</p>
       <p class="footer-links">
-        <a href="/cats">Meet Fat Louie's cousins &rarr;</a>
-        <span class="divider">·</span>
         <a href="/project/listening-room">Interested in our listening room sessions? Learn more &rarr;</a>
       </p>
     </div>
@@ -140,32 +163,155 @@ import holymoly from '../assets/tourist/holymoly.jpeg';
 </TouristLayout>
 
 <style>
-  /* ── HERO ── */
-  .hero-tourist {
-    padding: var(--spacing-2xl) 0 calc(var(--spacing-2xl) * 1.5);
+  /* ── HERO: ROYAL PROCLAMATION ── */
+  .hero-proclamation {
+    /* Use the sky gradient — dramatic in both light + dark via CSS vars */
+    background: var(--hero-small-gradient);
+    color: white;
+    padding: var(--spacing-2xl) var(--spacing-md);
+    text-align: center;
   }
 
-  .hero-tourist h1 {
-    font-size: 2.5rem;
-    margin-bottom: var(--spacing-md);
-  }
-
-  .hero-address {
-    font-family: var(--font-ui);
-    font-size: 0.8125rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    opacity: 0.8;
-    margin-bottom: var(--spacing-md);
-  }
-
-  .hero-sub {
-    max-width: 520px;
+  .hero-proclamation-inner {
+    max-width: 680px;
     margin: 0 auto;
-    opacity: 0.9;
-    font-size: 1.125rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+    animation: proclamation-arrive 0.7s ease both;
+  }
+
+  @keyframes proclamation-arrive {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Ornamental border rule ── */
+  .proclamation-ornament {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    width: 100%;
+  }
+
+  .orn-line {
+    flex: 1;
+    height: 1px;
+    background: white;
+    opacity: 0.35;
+  }
+
+  .orn-glyph {
+    color: white;
+    font-size: 0.75rem;
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+
+  .proclamation-ornament-top {
+    margin-bottom: calc(var(--spacing-lg) * -0.5);
+  }
+
+  .proclamation-ornament-bottom {
+    margin-top: calc(var(--spacing-lg) * -0.5);
+  }
+
+  /* ── Medallion ── */
+  .proclamation-medallion {
+    width: 260px;
+    height: 260px;
+    object-fit: contain;
+    display: block;
+    animation: medallion-drop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s both;
+  }
+
+  @keyframes medallion-drop {
+    from { opacity: 0; transform: scale(0.88); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  /* ── Headline ── */
+  .proclamation-headline {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 2.75rem;
+    line-height: 1.15;
+    color: white;
+    margin: 0;
+    animation: proclamation-arrive 0.7s ease 0.25s both;
+  }
+
+  /* ── Address ── */
+  .proclamation-address {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: white;
+    opacity: 0.8;
+    margin: 0;
+    animation: proclamation-arrive 0.7s ease 0.35s both;
+  }
+
+  /* ── Subtitle ── */
+  .proclamation-sub {
     font-family: var(--font-serif);
-    font-weight: var(--description-weight);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: white;
+    opacity: 0.9;
+    max-width: 480px;
+    margin: 0;
+    animation: proclamation-arrive 0.7s ease 0.4s both;
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 640px) {
+    .hero-proclamation {
+      padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .hero-proclamation-inner {
+      gap: var(--spacing-md);
+    }
+
+    .proclamation-medallion {
+      width: 160px;
+      height: 160px;
+    }
+
+    .proclamation-headline {
+      font-size: 2rem;
+    }
+
+    .proclamation-sub {
+      font-size: 1rem;
+    }
+  }
+
+  /* ── Narrow (iPhone SE, 375px) ── */
+  @media (max-width: 400px) {
+    .proclamation-headline {
+      font-size: 1.65rem;
+    }
+
+    .proclamation-medallion {
+      width: 130px;
+      height: 130px;
+    }
+  }
+
+  /* ── GALLERY CATS LINK ── */
+  .gallery-cats-link {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+    font-family: var(--font-ui);
+    font-size: 0.875rem;
+    letter-spacing: 0.06em;
   }
 
   /* ── GALLERY ── */
@@ -348,10 +494,6 @@ import holymoly from '../assets/tourist/holymoly.jpeg';
 
   /* ── MOBILE ── */
   @media (max-width: 640px) {
-    .hero-tourist h1 {
-      font-size: 1.875rem;
-    }
-
     .gallery-grid {
       grid-template-columns: 1fr;
     }
