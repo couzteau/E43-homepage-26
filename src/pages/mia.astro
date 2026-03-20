@@ -89,18 +89,17 @@ import holymoly from '../assets/tourist/holymoly.jpeg';
   </section>
 
   <!-- THE DOOR -->
-  <section class="section section-hero-bg">
-    <div class="container">
-      <div class="door-layout">
-        <div class="door-image" data-lightbox>
-          <Image src={door} alt="Resist Much Obey Little — Princess Mia and Princess Leia door mural" widths={[400, 800]} sizes="(max-width: 640px) 100vw, 50vw" loading="lazy" />
-        </div>
-        <div class="door-text">
-          <h2>Princesses can be rebels.</h2>
-          <p>The two women on our door are Princess Mia — pre-transformation, wild curly hair intact — and her sister in spirit, Princess Leia.</p>
-<p>This is the Excelsior — a neighborhood of immigrants, families, and working people. We watch out for each other here. We warn our neighbors. We show up.</p>
-          <p class="door-cta">Take a photo. Share it. The more people see it, the further the message travels.</p>
-        </div>
+  <section class="section section-hero-bg door-section">
+    <div class="door-layout">
+      <div class="door-image" data-lightbox>
+        <Image src={door} alt="Resist Much Obey Little — Princess Mia and Princess Leia door mural" widths={[600, 1200]} sizes="(max-width: 640px) 100vw, 55vw" loading="lazy" />
+      </div>
+      <div class="door-text">
+        <p class="door-eyebrow">The door · 724 Brazil Ave</p>
+        <h2 class="door-headline">Princesses<br />can be<br />rebels.</h2>
+        <p>The two women on our door are Princess Mia — pre-transformation, wild curly hair intact — and her sister in spirit, Princess Leia.</p>
+        <p>This is the Excelsior — a neighborhood of immigrants, families, and working people. We watch out for each other here. We warn our neighbors. We show up.</p>
+        <blockquote class="door-manifesto">Take a photo. Share it. The more people see it, the further the message travels.</blockquote>
       </div>
     </div>
   </section>
@@ -369,35 +368,105 @@ import holymoly from '../assets/tourist/holymoly.jpeg';
   }
 
   /* ── DOOR ── */
+  .door-section {
+    padding: 0;
+    overflow: hidden;
+  }
+
   .door-layout {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-2xl);
-    align-items: center;
+    grid-template-columns: 55% 45%;
+    min-height: 600px;
   }
 
   .door-image {
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
   }
 
   .door-image img {
     width: 100%;
-    border-radius: 4px;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
     display: block;
+    transition: transform 0.6s ease;
   }
 
-  .door-text h2 {
-    margin-bottom: var(--spacing-lg);
+  .door-image:hover img {
+    transform: scale(1.03);
+  }
+
+  .door-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--spacing-2xl) var(--spacing-2xl) var(--spacing-2xl) var(--spacing-xl);
+  }
+
+  .door-eyebrow {
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin: 0 0 var(--spacing-md);
+  }
+
+  .door-headline {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 3.5rem;
+    line-height: 1.05;
+    letter-spacing: normal;
+    text-transform: none;
+    color: inherit;
+    margin: 0 0 var(--spacing-xl);
   }
 
   .door-text p {
     margin-bottom: var(--spacing-md);
+    font-size: 0.975rem;
+    line-height: 1.7;
   }
 
-  .door-cta {
+  .door-manifesto {
+    margin: var(--spacing-xl) 0 0;
+    padding: var(--spacing-md) 0 var(--spacing-md) var(--spacing-lg);
+    border-left: 2px solid var(--color-primary);
+    font-family: var(--font-serif);
     font-style: italic;
-    font-weight: 500;
-    margin-top: var(--spacing-lg) !important;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+  }
+
+  /* ── DOOR MOBILE ── */
+  @media (max-width: 640px) {
+    .door-layout {
+      grid-template-columns: 1fr;
+      min-height: unset;
+    }
+
+    .door-image {
+      /* Let the image show at its natural ratio — don't crop the murals */
+      height: auto;
+      aspect-ratio: 3 / 4;
+    }
+
+    .door-image img {
+      object-position: center bottom;
+    }
+
+    .door-text {
+      padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .door-headline {
+      font-size: 2.5rem;
+    }
   }
 
   /* ── HOLY MOLY ── */
@@ -500,14 +569,6 @@ import holymoly from '../assets/tourist/holymoly.jpeg';
 
     .gallery-item img {
       height: 220px;
-    }
-
-    .door-layout {
-      grid-template-columns: 1fr;
-    }
-
-    .door-image {
-      order: -1;
     }
 
     .cta-pair {
