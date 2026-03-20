@@ -113,9 +113,9 @@ import holymoly from '../assets/tourist/holymoly.jpeg';
         <p class="photo-caption">Holy Moly Christmas Market 2025 — view from above.</p>
       </div>
       <p class="holymoly-body">Every year we transform the firehouse into San Francisco's most unexpected holiday market. Local artists, handmade goods, live music, and neighbors spilling out onto Brazil Ave.</p>
-      <p class="holymoly-body">It started small in 2020 to support our local artist community. Last year we had lines around the block.</p>
-      <p class="holymoly-date">December 2026 date coming soon.</p>
-      <a href="#signup" class="btn">Sign up to be first to know</a>
+      <p class="holymoly-pull">Last year we had lines around the block.</p>
+      <p class="holymoly-date">December 2026 · Date coming soon</p>
+      <a href="#signup" class="btn holymoly-btn">Get on the list &rarr;</a>
     </div>
   </section>
 
@@ -301,6 +301,29 @@ import holymoly from '../assets/tourist/holymoly.jpeg';
     .proclamation-medallion {
       width: 130px;
       height: 130px;
+    }
+  }
+
+  /* ── TYPOGRAPHY SCALE ── */
+  /* Bump section h2s — global caps at 1.75rem which is too timid */
+  .section-title {
+    font-size: 2.25rem;
+    letter-spacing: 0.1em;
+  }
+
+  /* Sign-off h2 should feel warm, not shouty */
+  .signoff h2 {
+    font-size: 2rem;
+  }
+
+  /* CTA block h2s stay smaller — they're labels, not moments */
+  .cta-block h2 {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 640px) {
+    .section-title {
+      font-size: 1.75rem;
     }
   }
 
@@ -491,18 +514,34 @@ import holymoly from '../assets/tourist/holymoly.jpeg';
   }
 
   .holymoly-body {
-    max-width: 580px;
+    max-width: 560px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: var(--spacing-md);
+  }
+
+  /* The social proof line — give it weight */
+  .holymoly-pull {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.75rem;
+    line-height: 1.3;
+    max-width: 480px;
+    margin: var(--spacing-xl) auto var(--spacing-lg);
+    opacity: 0.9;
   }
 
   .holymoly-date {
     font-family: var(--font-ui);
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    font-size: 0.875rem;
-    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    opacity: 0.6;
     margin-bottom: var(--spacing-lg);
+  }
+
+  .holymoly-btn {
+    margin-top: var(--spacing-sm);
   }
 
   /* ── CTA PAIR ── */
