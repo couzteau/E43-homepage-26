@@ -49,6 +49,22 @@ import holymoly from '../assets/tourist/holymoly.jpeg';
     </div>
   </section>
 
+  <!-- NO KINGS -->
+  <section class="section section-hero-flipped no-kings-section">
+    <div class="container no-kings-inner">
+      <h2 class="no-kings-headline">Princess wake up! No Kings Day.</h2>
+      <img
+        src="/images/NK3_16x9-1.webp"
+        alt="March 28 — No Thrones. No Crowns. No Kings."
+        class="no-kings-banner"
+        loading="eager"
+      />
+      <p>Mia chose Genovia over a crown that came without consent. Leia chose the Rebellion over an Empire. Today, so do we.</p>
+      <p>Find your local march and show up. The more people who show up, the further the message travels.</p>
+      <a href="https://www.nokings.org" class="btn" target="_blank" rel="noopener noreferrer">Find a march &rarr;</a>
+    </div>
+  </section>
+
   <!-- INSIDE THE FIREHOUSE -->
   <section class="section section-hero-flipped">
     <div class="container">
@@ -598,6 +614,44 @@ import holymoly from '../assets/tourist/holymoly.jpeg';
   .divider {
     color: var(--color-text-muted);
     opacity: 0.5;
+  }
+
+  /* ── NO KINGS ── */
+  .no-kings-section {
+    border-top: 3px solid var(--color-primary);
+  }
+
+  .no-kings-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .no-kings-headline {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 1.15;
+    margin: 0 0 var(--spacing-xl);
+  }
+
+  .no-kings-banner {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    display: block;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .no-kings-inner p {
+    margin-bottom: var(--spacing-md);
+    font-size: 0.975rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* ── MOBILE ── */
