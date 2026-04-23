@@ -12,6 +12,14 @@ Where a third place is defined by physical accessibility, a fourth space is defi
 
 Engine 43 is a fourth space. The membership structure isn't just a licensing workaround — it's the architecture of the proposition. You're not dropping in. You've chosen to be here, and someone has chosen what you're hearing and why.
 
+
+
+Idea: Hifi fidelity, deep listening, dance party, 
+
+
+
+
+
 ---
 
 ## Friction as Care
