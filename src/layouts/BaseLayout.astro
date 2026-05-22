@@ -19,7 +19,22 @@ const { title, description = 'Engine 43 - A historic firehouse venue in the hear
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="stylesheet" href="https://use.typekit.net/rxq5htb.css" />
+
+    <!-- Preload hero background images so the browser finds them before CSS is parsed -->
+    <link rel="preload" as="image" href="/images/daysky/AdobeStock_293386615-768.webp"
+      media="not (prefers-color-scheme: dark) and (max-width: 768px)" />
+    <link rel="preload" as="image" href="/images/daysky/AdobeStock_293386615-1920.webp"
+      media="not (prefers-color-scheme: dark) and (min-width: 769px)" />
+    <link rel="preload" as="image" href="/images/nightsky/AdobeStock_551857355-768.webp"
+      media="(prefers-color-scheme: dark) and (max-width: 768px)" />
+    <link rel="preload" as="image" href="/images/nightsky/AdobeStock_551857355-1920.webp"
+      media="(prefers-color-scheme: dark) and (min-width: 769px)" />
+
+    <!-- Load Typekit async so it doesn't block rendering -->
+    <link rel="preload" href="https://use.typekit.net/rxq5htb.css" as="style"
+      onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://use.typekit.net/rxq5htb.css" /></noscript>
+
     <title>{title} | Engine 43</title>
   </head>
   <body>

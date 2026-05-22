@@ -6,16 +6,13 @@
 
 ## The Fourth Space
 
+*Hifi deep listening dance party.*
+
 Meaningful music culture is migrating away from traditional third places — pubs, coffee shops, clubs — as streaming flattens the musical commons and those physical spaces erode. What's emerging in their place is what one writer has called the fourth space (see: ["The Spaces Between", musicx Substack](https://musicx.substack.com/p/the-spaces-between-or-why-music-needs)): invite-only or membership-based, human-curated, no algorithmic mediation, with regulars and genuine co-presence. Not open to all, and deliberately so.
 
 Where a third place is defined by physical accessibility, a fourth space is defined by intentionality. You have to want to be there. The listener and the selector are both present, both committed. Neither is passive. That shared commitment is what creates the conditions for something real to happen.
 
 Engine 43 is a fourth space. The membership structure isn't just a licensing workaround — it's the architecture of the proposition. You're not dropping in. You've chosen to be here, and someone has chosen what you're hearing and why.
-
-
-
-Idea: Hifi fidelity, deep listening, dance party, 
-
 
 
 
