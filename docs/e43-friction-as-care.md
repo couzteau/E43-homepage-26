@@ -90,3 +90,11 @@ Engine 43 is literally the counter-argument to both *The Princess Diaries* and *
 *Engine 43 — 724 Brazil Ave, San Francisco*
 
 [^1]: "Friction as care" as a framing concept originates from ["The Spaces Between, or Why Music Needs a Fourth Space"](https://musicx.substack.com/p/the-spaces-between-or-why-music-needs), musicx Substack, February 2026.
+
+
+## References:
+https://claude.ai/artifact/LY1mToKSiHQRxSdmpJrh62#fe9976ba-3a89
+
+
+Online version:
+https://claude.ai/artifact/TUZs6MqRwp5ehcvfDx2BM7#30145fc2-6241
