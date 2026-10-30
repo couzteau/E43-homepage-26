@@ -1,0 +1,34 @@
+---
+description: Rules for writing git commit messages
+globs:
+alwaysApply: true
+---
+
+# Commit message style
+
+- Main description: under 200 characters, imperative mood ("add", "fix", "remove", "update")
+- Never use the words "refactor" or "enhance" — say specifically what changed instead
+- If multiple distinct things changed, use a short subject line then bullet points
+- No filler: skip "this commit", "in order to", "various improvements"
+- One bullet per distinct change — drop it if everything fits on one line
+
+## Examples
+
+Good (single change):
+```
+fix nav links disappearing on mobile at 768px breakpoint
+```
+
+Good (multiple changes):
+```
+update tourist page hero section
+
+- swap placeholder copy for final directions text
+- remove unused EventCard import
+- fix broken link to /cats
+```
+
+Bad:
+```
+Refactor and enhance the layout components to improve performance and user experience across multiple pages with various updates
+```

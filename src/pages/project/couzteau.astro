@@ -1,0 +1,175 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import studio from '../../assets/couzteau/studio.jpg';
+
+const repos = [
+  {
+    name: 'Degoogle-Photos',
+    href: 'https://github.com/couzteau/Degoogle-Photos',
+    language: 'Python',
+    description: "Leave Google Photos for good. Untangles Takeout's chaotic zip archives into organized folders you actually own. No cloud, no AI training on your family photos.",
+  },
+];
+---
+
+<BaseLayout title="Couzteau" description="Music, DJ sets and open source by Couzteau, based at Engine 43 in San Francisco.">
+  <section class="hero-small">
+    <div class="container">
+      <h1>Couzteau</h1>
+      <p>Music at night. Code by day, and a little on the side.</p>
+    </div>
+  </section>
+
+  <section class="section section-hero-flipped">
+    <div class="container content-container">
+      <article class="project-content music-layout">
+        <figure class="studio-photo">
+          <Image
+            src={studio}
+            alt="The studio in the firehouse basement: drums, bass, monitors and a lava lamp"
+            widths={[280, 560, 800]}
+            sizes="(max-width: 768px) 100vw, 280px"
+            loading="lazy"
+          />
+        </figure>
+        <div class="music-text">
+          <h2>Music</h2>
+          <p>
+            Came up in Hamburg's electronic scene, landed in San Francisco in 2008, never stopped.
+            House and techno, mostly deep, mostly after dark. DJ and producer.
+          </p>
+          <p>
+            Studio's in the firehouse basement. Soundproof, so the volume knob has no curfew.
+          </p>
+          <p>
+            Start with Teardrops with Murmur Tooth.
+          </p>
+          <div class="links">
+            <a href="https://soundcloud.com/couzteau" class="btn" target="_blank" rel="noopener">SoundCloud</a>
+            <a href="https://open.spotify.com/artist/50xBCUWdi2VqCEUlYrWHmF" class="btn btn-outline" target="_blank" rel="noopener">Spotify</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section-hero-bg">
+    <div class="container content-container">
+      <article class="project-content">
+        <h2>Open source</h2>
+        <p>
+          I write software for a living. Now and then I build something for myself that's worth sharing.
+        </p>
+
+        <ul class="services-list">
+          {repos.map(repo => (
+            <li>
+              <strong><a href={repo.href} target="_blank" rel="noopener">{repo.name}</a></strong>
+              <span>{repo.description}</span>
+              <span class="lang">{repo.language}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div class="links">
+          <a href="https://github.com/couzteau" class="btn btn-outline" target="_blank" rel="noopener">More on GitHub</a>
+        </div>
+
+        <p class="back-link">
+          <a href="/project">&larr; Back to all projects</a>
+        </p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .content-container {
+    max-width: 800px;
+  }
+
+  .music-layout {
+    display: grid;
+    gap: var(--spacing-xl);
+    align-items: center;
+  }
+
+  .studio-photo {
+    margin: 0;
+  }
+
+  .studio-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+
+  @media (min-width: 769px) {
+    .music-layout {
+      grid-template-columns: 280px 1fr;
+      align-items: start;
+    }
+  }
+
+  .project-content h2 {
+    margin-top: 0;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .project-content p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.8;
+    font-family: var(--font-serif);
+    font-weight: var(--description-weight);
+    font-style: var(--description-style);
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+  }
+
+  .services-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-lg) 0;
+  }
+
+  .services-list li {
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .services-list li:last-child {
+    border-bottom: none;
+  }
+
+  .services-list strong {
+    font-family: var(--font-serif);
+    font-weight: var(--accent-weight);
+    font-style: var(--accent-style);
+  }
+
+  .services-list span {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    font-family: var(--font-serif);
+    font-weight: var(--description-weight);
+    font-style: var(--description-style);
+  }
+
+  .services-list .lang {
+    font-size: 0.8rem;
+  }
+
+  .back-link {
+    margin-top: var(--spacing-xl);
+  }
+</style>
