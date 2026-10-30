@@ -114,7 +114,7 @@ import holymoly from '../assets/tourist/holymoly.jpeg';
       </div>
       <p class="holymoly-body">Every year we transform the firehouse into San Francisco's most unexpected holiday market. Local artists, handmade goods, live music, and neighbors spilling out onto Brazil Ave.</p>
       <p class="holymoly-pull">Last year we had lines around the block.</p>
-      <p class="holymoly-date">December 2026 · Date coming soon</p>
+      <p class="holymoly-date">Sunday, December 13 · 11 AM – 4 PM</p>
       <a href="#signup" class="btn holymoly-btn">Get on the list &rarr;</a>
     </div>
   </section>
@@ -535,9 +535,15 @@ import holymoly from '../assets/tourist/holymoly.jpeg';
     font-family: var(--font-ui);
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    font-size: 0.75rem;
-    opacity: 0.6;
+    font-size: 1.5rem;
+    opacity: 0.9;
     margin-bottom: var(--spacing-lg);
+  }
+
+  @media (max-width: 640px) {
+    .holymoly-date {
+      font-size: 1.1rem;
+    }
   }
 
   .holymoly-btn {

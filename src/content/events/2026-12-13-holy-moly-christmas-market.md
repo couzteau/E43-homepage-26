@@ -1,10 +1,10 @@
 ---
 title: "Holy Moly Christmas Market"
-date: 2026-12-05
-time: "11:00 AM - 5:00 PM"
+date: 2026-12-13
+time: "11:00 AM - 4:00 PM"
 description: "Our infamous arts and crafts fair returns! Local artists, pottery, prints, art, and live music."
 location: "Engine 43, 724 Brazil Ave"
-image: "/images/holy-moly-christmas-market-2026.png"
+image: "/images/holy-moly-christmas-market-2026-placeholder.jpg"
 tags: ["market", "art", "crafts", "christmas", "holiday"]
 ---
 
